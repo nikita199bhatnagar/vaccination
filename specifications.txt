@@ -1,0 +1,10 @@
+Unknowns
+How do I find my latitude and longitude
+How do I get vaccination centre data
+How do I calculate the distance
+How do I show the information to the client
+
+Tasks List
+1. Show my current loctaion a webpage 
+2. Calculate distance from a particular location
+3. 
