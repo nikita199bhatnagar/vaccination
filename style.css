@@ -1,0 +1,158 @@
+body{
+background-position: center;
+background-image: url("screenshot/bg10.png");
+/* background-image: linear-gradient(135deg, rgba(255,0,0,0), rgba(255,0,0,1)); */
+background-repeat: no-repeat;
+background-size: cover;
+height: 97.8vh;  /*check later*/
+}
+
+body::after {
+    content: "";
+    background: url("screenshot/bg10.png");
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+  
+#title{
+margin: 2% 0% 2% 2% ;
+font-style: normal;
+color: white;
+font-size: 300%;
+font-family: system-ui;
+font-weight: 500;
+}
+
+/* #current_location {
+    width: 22%;
+    margin: 0% 0% 0% 7%;
+    background-color: rgba(207, 197, 197, 0.342);
+    color: aliceblue;
+    padding: 1%;
+} */
+
+.container {    
+    color: white;
+    position: absolute;
+    padding: 0%;
+    float: left;
+    margin: 1% 4%;
+}
+
+.container h1{
+
+    font-family:'Heebo',sans-serif;
+    width: 50%;
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 5px solid purple;
+    margin-bottom: 15px;
+    padding: 13px 0;
+}
+    
+.box{
+    width: 100%;
+    margin: 22px 0px;
+    border-bottom: 2px solid purple;
+    position: relative;
+}
+
+.box select{
+    background:transparent; 
+    /* width: 75%; */
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.btn{
+
+    color: white;
+    cursor: pointer;
+    outline: none;
+    margin: 12px 0;
+    padding: 10px 21px;
+    border: 2px solid purple;
+    border-radius: 10px;
+    font-size: 18px;
+    background: none;
+    font-weight: bold;
+
+}
+
+/* #nearby-covid-places-mapmyindia{
+    width: 1125px;
+    height: 400px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+/* DUMMY CODE */
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
