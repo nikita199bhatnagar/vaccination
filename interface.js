@@ -16,18 +16,56 @@
 
 
 var Interface = {};
-Interface.setDistance = 
-function (){
-    var givenDistance = $("#Distance").children("option:selected").val();
-    StaticData.getSessionByDistrict(givenDistance,myLocation.lat,myLocation.long);
+Interface.setDistance =
+    function () {
+        var givenDistance = $("#Distance").children("option:selected").val();
+        // var template_input = {};
+        // template_input.districts = StaticData.getSessionByDistrict(givenDistance,myLocation.lat,myLocation.long); 
+        // var template = `<table border>
+        // {{#centers}}
+        // <tr>
+        // <td>{{districtID}}</td>
+        // <td>{{name}}</td>
+        // </tr>
+        // {{/districts}}
+        // </table>
+        // `;
+        // var html = Mustache.to_html(template, template_input);
+        // $('#veiwCenters').html(html);
+        
+        setTimeout(() => { console.log(StaticData.getSessionByDistrict(givenDistance,myLocation.lat,myLocation.long)); }, 2000);
+        
+        $("#btn").on('click', function() {
 
-    console. log("Hello");
-    setTimeout(() => { console. log("World!"); }, 2000);
-    
-    console.log("Interface called");
-};
+            var data = {"." : [ {"name" : "Jonathan"}, {"name" : "Yash"}]};
+           
+        });
+
+        console.log("Interface called");
+    }
 
 Interface.repaint =
-function (){
-    console.log("Repaint");
-};
+    function () {
+        var template = 
+        `<table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>t</th>
+                    <th>t</th>
+                </tr>
+            </thead>
+            <tbody>
+            {{#allCenters}}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ name }}</td>
+                    <td>{{ name }}</td>
+                </tr>
+            {{/allCenters}}  
+            </tbody>
+        </table>`;
+        var text = Mustache.render(template, StaticData.centerData);        
+        $("#viewCenters").html(text);
+        console.log("Repaint");
+    };

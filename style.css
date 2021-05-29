@@ -28,14 +28,6 @@ font-family: system-ui;
 font-weight: 500;
 }
 
-/* #current_location {
-    width: 22%;
-    margin: 0% 0% 0% 7%;
-    background-color: rgba(207, 197, 197, 0.342);
-    color: aliceblue;
-    padding: 1%;
-} */
-
 .container {    
     color: white;
     position: absolute;
@@ -50,7 +42,7 @@ font-weight: 500;
     width: 50%;
     display: inline-block;
     font-size: 40px;
-    border-bottom: 5px solid purple;
+    border-bottom: 5px solid rgba(128, 0, 128, 0.774);
     margin-bottom: 15px;
     padding: 13px 0;
 }
@@ -63,7 +55,7 @@ font-weight: 500;
 }
 
 .box select{
-    background:transparent; 
+    background: #00090e; 
     /* width: 75%; */
     padding: 5px 10px;
     font-size: 20px;
@@ -72,7 +64,7 @@ font-weight: 500;
     color: white;
 }
 
-.btn{
+#btn{
 
     color: white;
     cursor: pointer;
@@ -93,6 +85,38 @@ font-weight: 500;
 } */
 
 
+.containerTable {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.3);
+	color: #fff;
+}
+
+th {
+	text-align: center;
+    background-color: #55608f;
+}
+
+
+	td {
+		position: relative;
+        text-align: center;
+	}
 
 
 
@@ -102,57 +126,94 @@ font-weight: 500;
 
 
 
-/* DUMMY CODE */
-  .custom-select select {
-    display: none; /*hide original SELECT element: */
-  }
+
+    /* @import "compass/css3";
+
   
-  .select-selected {
-    background-color: DodgerBlue;
-  }
-  
-  /* Style the arrow inside the select element: */
-  .select-selected:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
-  }
-  
-  /* Point the arrow upwards when the select box is open (active): */
-  .select-selected.select-arrow-active:after {
-    border-color: transparent transparent #fff transparent;
-    top: 7px;
-  }
-  
-  /* style the items (options), including the selected item: */
-  .select-items div,.select-selected {
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-  }
-  
-  /* Style items (options): */
-  .select-items {
-    position: absolute;
-    background-color: DodgerBlue;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-  }
-  
-  /* Hide the items when the select box is closed: */
-  .select-hide {
-    display: none;
-  }
-  
-  .select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+    
+    $breakpoint-alpha: 480px; // adjust to your needs
+    
+    .rwd-table {
+      margin: 1em 0;
+      min-width: 300px; // adjust to your needs
+      
+      tr {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      th {
+        display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+      }
+      
+      td {
+        display: block; 
+        
+        &:first-child {
+          padding-top: .5em;
+        }
+        &:last-child {
+          padding-bottom: .5em;
+        }
+    
+        &:before {
+          content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+          font-weight: bold;
+    
+          // optional stuff to make it look nicer
+          width: 6.5em; // magic number :( adjust according to your own content
+          display: inline-block;
+          // end options
+          
+          @media (min-width: $breakpoint-alpha) {
+            display: none;
+          }
+        }
+      }
+      
+      th, td {
+        text-align: left;
+        
+        @media (min-width: $breakpoint-alpha) {
+          display: table-cell;
+          padding: .25em .5em;
+          
+          &:first-child {
+            padding-left: 0;
+          }
+          
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+    
+      }
+      
+      
+    }
+    
+    
+    // presentational styling
+    
+    @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+    
+ 
+    
+    .rwd-table {
+      background: #34495E;
+      color: #fff;
+      border-radius: .4em;
+      overflow: hidden;
+      tr {
+        border-color: lighten(#34495E, 10%);
+      }
+      th, td {
+        margin: .5em 1em;
+        @media (min-width: $breakpoint-alpha) { 
+          padding: 1em !important; 
+        }
+      }
+      th, td:before {
+        color: #dd5;
+      }
+    } */

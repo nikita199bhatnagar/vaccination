@@ -41,36 +41,37 @@ StaticData.loadDistrictList =
 
 
 StaticData.centerData = {};
+
 StaticData.getSessionByDistrict =
     function (distance,myLat,myLong) {
         StaticData.centerData.allCenters = [];
+        StaticData.centerData.allCentersByDistrict = [];
+
         $.getJSON("34.651.json", function(json) {
             var district = {};
             district.districtID = 651;
             district.centers = json.centers;
-            StaticData.centerData.allCenters.push(district);
-            console.log(json);
-            Interface.repaint();
-        });
+            StaticData.centerData.allCenters = StaticData.centerData.allCenters.concat(json.centers);
+            StaticData.centerData.allCentersByDistrict = StaticData.centerData.allCentersByDistrict.concat(district);
+            $.getJSON("200.json", function(json) {
+                var district = {};
+                district.districtID = 200;
+                district.centers = json.centers;
+                StaticData.centerData.allCenters = StaticData.centerData.allCenters.concat(json.centers);
+                StaticData.centerData.allCentersByDistrict = StaticData.centerData.allCentersByDistrict.concat(district);
 
-        $.getJSON("200.json", function(json) {
-            var district = {};
-            district.districtID = 200;
-            district.centers = json.centers;
-            StaticData.centerData.allCenters.push(district);
-            console.log(json);
-            Interface.repaint();
-        });
+                $.getJSON("20.json", function(json) {
+                    var district = {};
+                    district.districtID = 20;
+                    district.centers = json.centers;
+                    StaticData.centerData.allCenters = StaticData.centerData.allCenters.concat(json.centers);
+                    
+                    StaticData.centerData.allCentersByDistrict = StaticData.centerData.allCentersByDistrict.concat(district);
 
-        $.getJSON("20.json", function(json) {
-            var district = {};
-            district.districtID = 20;
-            district.centers = json.centers;
-            StaticData.centerData.allCenters.push(district);
-            console.log(json);
-            Interface.repaint();
+                    Interface.repaint();
+                });
+            });
         });
-        
     };
 
 
