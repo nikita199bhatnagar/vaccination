@@ -35,11 +35,70 @@
                 <option value="200">200</option>
             </select>
         </div>
-        <button class="btn">Start</button>
+        <button id="btn" onclick="Interface.setDistance()">Start</button>
     </div>
 
-   
-    
+    <!-- <h1>RWD List to Table</h1>
+    <table class="rwd-table">
+      <tr>
+        <th>Movie Title</th>
+        <th>Genre</th>
+        <th>Year</th>
+        <th>Gross</th>
+      </tr>
+      <tr>
+        <td data-th="Movie Title">Star Wars</td>
+        <td data-th="Genre">Adventure, Sci-fi</td>
+        <td data-th="Year">1977</td>
+        <td data-th="Gross">$460,935,665</td>
+      </tr>
+      <tr>
+        <td data-th="Movie Title">Howard The Duck</td>
+        <td data-th="Genre">"Comedy"</td>
+        <td data-th="Year">1986</td>
+        <td data-th="Gross">$16,295,774</td>
+      </tr>
+      <tr>
+        <td data-th="Movie Title">American Graffiti</td>
+        <td data-th="Genre">Comedy, Drama</td>
+        <td data-th="Year">1973</td>
+        <td data-th="Gross">$115,000,000</td>
+      </tr>
+    </table> -->
+
+
+
+
+    <div class="containerTable" id="viewCenters">
+        <table>
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                    <th>Column 4</th>
+                    <th>Column 5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cell 1</td>
+                    <td>Cell 2</td>
+                    <td>Cell 3</td>
+                    <td>Cell 4</td>
+                    <td>Cell 5</td>
+                </tr>
+                <tr>
+                    <td>Cell 1</td>
+                    <td>Cell 2</td>
+                    <td>Cell 3</td>
+                    <td>Cell 4</td>
+                    <td>Cell 5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <!-- <div id="nearby-covid-places-mapmyindia">
     <script type="text/javascript">
         loadNearbyCovidCentresMapmyIndiaDiv(document.getElementById("nearby-covid-places-mapmyindia"));
@@ -49,3 +108,18 @@
 </body>
 
 </html>
+
+
+<!-- from urllib.parse import urlencode, urlparse, parse_qs
+
+from lxml.html import fromstring
+from requests import get
+
+raw = get("https://www.google.com/search?q=StackOverflow").text
+page = fromstring(raw)
+
+for result in page.cssselect(".r a"):
+    url = result.get("href")
+    if url.startswith("/url?"):
+        url = parse_qs(urlparse(url).query)['q']
+    print(url[0]) -->
