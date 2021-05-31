@@ -47,7 +47,7 @@ Interface.setDistance =
 Interface.repaint =
     function () {
         var template = 
-        `<table>
+        `<table cellpadding="0" cellspacing="0" border="0">
             <thead>
                 <tr>
                     <th>Name</th>
