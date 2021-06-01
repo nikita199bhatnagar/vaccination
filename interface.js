@@ -53,9 +53,8 @@ Interface.repaint =
                     <td>{{ name }}</td>
                     <td>{{ district_name }}</td>
                     <td>{{ state_name }}</td>
-                    <td>{{ state_name }}</td>
-                    <td>{{ state_name }}</td>
-                    <td>{{ state_name }}</td>
+                    <td>Date</td>
+                    <td>Available Doses</td>
                 </tr>
             {{/allCenters}}  
             </tbody>

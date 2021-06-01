@@ -1,37 +1,26 @@
-# import requests, bs4, json
-# with open("pincodeList.json", "w") as write_file:
-#     json.dump(data, write_file)
-
-
-import json
-
+import requests, bs4, json, re, time
 f = open('pincodeList.json','r')
 data = json.load(f)
+counter = 0
+failed = []
+# load pseudoRepo
+
 for i in data['data']:
-	print(i)
+	counter = counter + 1
+	url = ("https://www.google.com/search?q=lat+and+long+of+" + str(i['Pincode']))
+	# if pincode exist in pseudoRepo then continue (Move to next pincode)
+	time.sleep(1) # 1 sec delay
+	res = requests.get(url)
+	soup = bs4.BeautifulSoup(res.text, "html.parser")
+	try:
+		coordinates = soup.select('div')
+		myStr = coordinates[29].text
+		location = re.findall("\d+\.\d+", myStr)
+		print("Pincode:",i['Pincode'],"Latitude:",location[0],"Longitude:",location[1])
+	except:
+		failed.append(i['Pincode'])
 f.close()
-
-# x = '{ "name":"John", "age":30, "city":"New York"}'
-# y = json.loads(x)
-# print(y["age"])
-
-
-
-
-
-
-
-
-
-
-
-# pincode = 244713
-# url = ("https://www.google.com/search?q=lat+and+long+of+" + str(pincode))
-# res = requests.get(url)
-# res.raise_for_status
-# soup = bs4.BeautifulSoup(res.text, "html.parser")
-# coordinates = soup.select('div')
-# print(coordinates[29].text)
+print(failed)
 
 
     
