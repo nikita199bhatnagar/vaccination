@@ -48,19 +48,14 @@ Interface.repaint =
     function () {
         var template = 
         `<table cellpadding="0" cellspacing="0" border="0">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>t</th>
-                    <th>t</th>
-                </tr>
-            </thead>
-            <tbody>
             {{#allCenters}}
                 <tr>
                     <td>{{ name }}</td>
-                    <td>{{ name }}</td>
-                    <td>{{ name }}</td>
+                    <td>{{ district_name }}</td>
+                    <td>{{ state_name }}</td>
+                    <td>{{ state_name }}</td>
+                    <td>{{ state_name }}</td>
+                    <td>{{ state_name }}</td>
                 </tr>
             {{/allCenters}}  
             </tbody>
