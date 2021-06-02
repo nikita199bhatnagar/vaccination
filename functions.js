@@ -7,6 +7,11 @@ $(document).ready(function () {
    toGetDistrict();
 });
 
+$(window).on("load resize ", function() {
+   var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+   $('.tbl-header').css({'padding-right':scrollWidth});
+ }).resize();
+
 
 function initGeolocation() {
    if (navigator.geolocation) {

@@ -47,20 +47,14 @@ Interface.setDistance =
 Interface.repaint =
     function () {
         var template = 
-        `<table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>t</th>
-                    <th>t</th>
-                </tr>
-            </thead>
-            <tbody>
+        `<table cellpadding="0" cellspacing="0" border="0">
             {{#allCenters}}
                 <tr>
                     <td>{{ name }}</td>
-                    <td>{{ name }}</td>
-                    <td>{{ name }}</td>
+                    <td>{{ district_name }}</td>
+                    <td>{{ state_name }}</td>
+                    <td>Date</td>
+                    <td>Available Doses</td>
                 </tr>
             {{/allCenters}}  
             </tbody>
