@@ -2,288 +2,60 @@
 <html lang="en">
 
 <head>
-    <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
-    <!-- <script src="https://kit.fontawesome.com/433888fe69.js" crossorigin="anonymous"></script> -->
-    <!-- <i class="fa fa-envelope"></i><i class="fa fa-key"></i> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
-        integrity="sha512-3GRj7sme01zpWwRNPNy48Rda1bD9cq34lqYG5vb8ZXGc+wRqsoBJ3+AC25IYW5w5SrWlzHqIpNIxZt5QF9sXLg=="
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="interface.js"></script>
-    <script src="staticData.js"></script>
-    <script src="functions.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaccination centre</title>
-    <link rel="shortcut icon" href="Screenshot/logo2.png" type="image/x-icon">
+  <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
+  <!-- <script src="https://kit.fontawesome.com/433888fe69.js" crossorigin="anonymous"></script> -->
+  <!-- <i class="fa fa-envelope"></i><i class="fa fa-key"></i> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
+    integrity="sha512-3GRj7sme01zpWwRNPNy48Rda1bD9cq34lqYG5vb8ZXGc+wRqsoBJ3+AC25IYW5w5SrWlzHqIpNIxZt5QF9sXLg=="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="interface.js"></script>
+  <script src="staticData.js"></script>
+  <script src="functions.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccination centre</title>
+  <link rel="shortcut icon" href="Screenshot/logo2.png" type="image/x-icon">
 
 </head>
 
 <body>
 
-    <header id="title"><img src="Screenshot/logoNew.png"></header>
-    <div class="container">
-        <h1>Location</h1>
-        <div class="box">
-            <select name="Distance" id="Distance" onchange="Interface.setDistance()">
-                <option value="0">Enter Distance</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-            </select>
-        </div>
-        <button id="btn" onclick="Interface.setDistance()">Start</button>
+  <header id="title"><img src="Screenshot/logoNew.png"></header>
+  <div class="container">
+    <h1>Location</h1>
+    <div class="box">
+      <select name="Distance" id="Distance" onchange="Interface.setDistance()">
+        <option value="0">Enter Distance</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+      </select>
     </div>
+    <button id="btn" onclick="Interface.setDistance()">Start</button>
+  </div>
 
-    <!-- <div class="containerTable" id="viewCenters"></div> -->
+  <!-- <div class="containerTable" id="viewCenters"></div> -->
 
-    <section>
-        <div class="tbl-header">
-          <table>
-            <thead>
-              <tr>
-                <th>Centrer Name</th>
-                <th>District</th>
-                <th>State</th>
-                <th>Date</th>
-                <th>Availability</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div class="tbl-content" id="viewCenters">
-          <table>
-            <tbody>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-              <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
-              </tr>
-              <tr>
-                <td>AAX</td>
-                <td>ADELAIDE</td>
-                <td>$3.22</td>
-                <td>+0.01</td>
-                <td>+1.36%</td>
-              </tr>
-              <tr>
-                <td>XXD</td>
-                <td>ADITYA BIRLA</td>
-                <td>$1.02</td>
-                <td>-1.01</td>
-                <td>+2.36%</td>
-              </tr>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-              <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
-              </tr>
-              <tr>
-                <td>AAX</td>
-                <td>ADELAIDE</td>
-                <td>$3.22</td>
-                <td>+0.01</td>
-                <td>+1.36%</td>
-              </tr>
-              <tr>
-                <td>XXD</td>
-                <td>ADITYA BIRLA</td>
-                <td>$1.02</td>
-                <td>-1.01</td>
-                <td>+2.36%</td>
-              </tr>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-              <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
-              </tr>
-              <tr>
-                <td>AAX</td>
-                <td>ADELAIDE</td>
-                <td>$3.22</td>
-                <td>+0.01</td>
-                <td>+1.36%</td>
-              </tr>
-              <tr>
-                <td>XXD</td>
-                <td>ADITYA BIRLA</td>
-                <td>$1.02</td>
-                <td>-1.01</td>
-                <td>+2.36%</td>
-              </tr>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-              <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
-              </tr>
-              <tr>
-                <td>AAX</td>
-                <td>ADELAIDE</td>
-                <td>$3.22</td>
-                <td>+0.01</td>
-                <td>+1.36%</td>
-              </tr>
-              <tr>
-                <td>XXD</td>
-                <td>ADITYA BIRLA</td>
-                <td>$1.02</td>
-                <td>-1.01</td>
-                <td>+2.36%</td>
-              </tr>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-              <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
-              </tr>
-              <tr>
-                <td>AAX</td>
-                <td>ADELAIDE</td>
-                <td>$3.22</td>
-                <td>+0.01</td>
-                <td>+1.36%</td>
-              </tr>
-              <tr>
-                <td>XXD</td>
-                <td>ADITYA BIRLA</td>
-                <td>$1.02</td>
-                <td>-1.01</td>
-                <td>+2.36%</td>
-              </tr>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-              <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
-              </tr>
-              <tr>
-                <td>AAX</td>
-                <td>ADELAIDE</td>
-                <td>$3.22</td>
-                <td>+0.01</td>
-                <td>+1.36%</td>
-              </tr>
-              <tr>
-                <td>XXD</td>
-                <td>ADITYA BIRLA</td>
-                <td>$1.02</td>
-                <td>-1.01</td>
-                <td>+2.36%</td>
-              </tr>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-              <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
-              </tr>
-              <tr>
-                <td>AAX</td>
-                <td>ADELAIDE</td>
-                <td>$3.22</td>
-                <td>+0.01</td>
-                <td>+1.36%</td>
-              </tr>
-              <tr>
-                <td>XXD</td>
-                <td>ADITYA BIRLA</td>
-                <td>$1.02</td>
-                <td>-1.01</td>
-                <td>+2.36%</td>
-              </tr>
-              <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
-              </tr>
-              <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
-              </tr>
-              <tr>
-                <td>AAX</td>
-                <td>ADELAIDE</td>
-                <td>$3.22</td>
-                <td>+0.01</td>
-                <td>+1.36%</td>
-              </tr>
-              <tr>
-                <td>XXD</td>
-                <td>ADITYA BIRLA</td>
-                <td>$1.02</td>
-                <td>-1.01</td>
-                <td>+2.36%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+  <section>
+    <div class="tbl-header">
+      <table>
+        <thead>
+          <tr>
+            <th>Centrer Name</th>
+            <th>District</th>
+            <th>State</th>
+            <th>Date</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content" id="viewCenters">
+    </div>
+  </section>
 
 
 </body>
@@ -291,7 +63,7 @@
 </html>
 
 
-   <!-- <div id="nearby-covid-places-mapmyindia">
+<!-- <div id="nearby-covid-places-mapmyindia">
     <script type="text/javascript">
         loadNearbyCovidCentresMapmyIndiaDiv(document.getElementById("nearby-covid-places-mapmyindia"));
     </script>
