@@ -4,11 +4,14 @@ data = json.load(f)
 counter = 0
 failed = []
 
+fa = open('failed.txt','a')
+
+
 for i in data['data']:
 	counter = counter + 1
 	url = ("https://www.google.com/search?q=lat+and+long+of+" + str(i['Pincode']))
-	if counter % 300 == 0:
-		time.sleep(20) # 1 sec delay
+	# if counter % 30 == 0:
+	time.sleep(1) # 1 sec delay
 	res = requests.get(url)
 	soup = bs4.BeautifulSoup(res.text, "html.parser")
 	try:
@@ -18,8 +21,10 @@ for i in data['data']:
 		print(i['Pincode'], location[0], location[1])
 	except:
 		failed.append(i['Pincode'])
-		
+		line = str(i['Pincode']) + "\n"
+		fa.write(line)
 f.close()
+fa.close()
 print(failed)
 
 

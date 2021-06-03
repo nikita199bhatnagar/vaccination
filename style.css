@@ -1,12 +1,12 @@
 body{
-background-position: center;
-background-image: url("screenshot/bg10.png");
-background-repeat: no-repeat;
-background-size: cover;
-height: 97.8vh;  /*check later*/
+    background-position: center;
+    background-image: url("screenshot/bg10.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 97.8vh;  /*check later*/
 }
 
-body::after {
+body::after{
     content: "";
     background: url("screenshot/bg10.png");
     opacity: 0.6;
@@ -19,15 +19,15 @@ body::after {
 }
   
 #title{
-margin: 2% 0% 2% 2% ;
-font-style: normal;
-color: white;
-font-size: 300%;
-font-family: system-ui;
-font-weight: 500;
+    margin: 2% 0% 2% 2% ;
+    font-style: normal;
+    color: white;
+    font-size: 300%;
+    font-family: system-ui;
+    font-weight: 500;
 }
 
-.container {    
+.container{    
     color: white;
     position: absolute;
     padding: 0%;
@@ -36,7 +36,6 @@ font-weight: 500;
 }
 
 .container h1{
-
     font-family:'Heebo',sans-serif;
     width: 50%;
     display: inline-block;
@@ -64,7 +63,6 @@ font-weight: 500;
 }
 
 #btn{
-
     color: white;
     cursor: pointer;
     outline: none;
@@ -78,13 +76,6 @@ font-weight: 500;
 
 }
 
-/* #nearby-covid-places-mapmyindia{
-    width: 1125px;
-    height: 400px;
-} */
-
-
-
 table {
 	width: 800px;
 	border-collapse: collapse;
@@ -93,7 +84,7 @@ table {
 }
 
 .tbl-header{
-    background-color: rgba(255,255,255,0.3);
+    background-color: #f5b4f5c4;
 }
 
 .tbl-content{
@@ -122,89 +113,71 @@ td{
     border-bottom: solid 1px rgba(255,255,255,0.1);
 }
   
-  
-  /* demo styles */
-  
-  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
-  /* body{
-    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-    background: linear-gradient(to right, #25c481, #25b7c4);
-    font-family: 'Roboto', sans-serif;
-  } */
-  section{
+/* demo styles */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+/* body{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+ background: linear-gradient(to right, #25c481, #25b7c4);
+ font-family: 'Roboto', sans-serif;
+} */
+section{
     position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
   
-  /* for custom scrollbar for webkit browser*/
+::-webkit-scrollbar{
+    width: 6px;
+} 
+::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb{
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+.btn-group button{
+    background-color:#ee8bee; /* Green background */
+    border: 1px #ee8bee; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */ 
+}
+
+#roundAge{
+    border-radius: 25px;
+    background-color:#ee8bee;
+    width: 13.475%;
+}
+
+#roundVaccine{
+    border-radius: 25px;
+    background-color:#ee8bee;
+    width: 18.57%;
+}
+
+#roundB{
+    border-radius: 25px;
+}
   
-  ::-webkit-scrollbar {
-      width: 6px;
-  } 
-  ::-webkit-scrollbar-track {
-     box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-  } 
-  ::-webkit-scrollbar-thumb {
-      box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-  }
+.btn-group button:not(:last-child){
+    border-right: none;
+}
+  
+.btn-group:after{
+    content: "";
+    clear: both;
+    display: table;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-.containerTable {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.btn-group button:hover{
+    background-color: purple;
 }
 
 
-table {
-	width: 800px;
-	border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-
-td {
-	padding: 15px;
-	background-color: rgba(255,255,255,0.3);
-	color: #fff;
-}
-
-th {
-	text-align: center;
-    background-color: #55608f;
-}
-
-
-	td {
-		position: relative;
-        text-align: center;
-	}
-
-
- */
-
-
+  
 
 
 
