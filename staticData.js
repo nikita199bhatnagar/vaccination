@@ -85,24 +85,72 @@ function nextDay() {
 }
 
 
+StaticData.allPinCodes = [];
+StaticData.availableVaccinations = [];
 
-StaticData.session = {};
-StaticData.getVal_50 = {};
-StaticData.getVal_50.date = [];
-StaticData.getVal_50.sessions = [];
-StaticData.getCentersByPincode =
+StaticData.updateDistances = function (data) {
+    for (i = 0; i < data.length; i++) {
+        var pin = {};
+        pin.Pincode = data[i].Pincode;
+        lat = data[i].Latitude;
+        long = data[i].Longitude;
+        pin.distance = distance(myLocation.lat, myLocation.long, lat, long, "K");
+        StaticData.allPinCodes.push(pin);
+    }
+    console.log("loaded pin codes");
+    StaticData.availableVaccinations = [];
+    StaticData.allPinCodes.forEach(StaticData.loadCentersByPincode);
+};
+
+StaticData.onCentreDataRecieved = function (data) {
+    StaticData.availableVaccinations.push("test");
+
+    // Append to the list
+    // call interface
+}
+
+StaticData.loadCentersByPincode = function (value, index, array) {
+    if (value.distance <= StaticData.range) {
+        console.log(value);
+        $.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + value.Pincode + "&date=" + date,
+            function (json) {
+                StaticData.onCentreDataRecieved(json);
+            });
+    }
+};
+
+StaticData.getCentersByPincode = function (range) {
+    // update distances
+    StaticData.range = range;
+    $.getJSON("test.json",
+        function (json) {
+            StaticData.updateDistances(json.data);
+        }
+    )
+};
+
+
+
+
+
+
+
+
+
+
+
+StaticData.getCentersByPincodeOld =
     function () {
         // $.getJSON("pincodeWithCoord.json",
         $.getJSON("test.json",
             function (json) {
                 data = json.data;
-                
                 for (i = 0; i < data.length; i++) {
                     lat = data[i].Latitude;
                     long = data[i].Longitude;
                     var dis = distance(myLocation.lat, myLocation.long, lat, long, "K");
                     console.log(dis);
-                    if (Math.abs(dis) <= 100) {
+                    if (Math.abs(dis) <= 50) {
                         $.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + data[i].Pincode + "&date=" + date,
                             function (data) {
                                 centers = data.centers;
@@ -125,7 +173,7 @@ StaticData.getCentersByPincode =
                                 }
                             });
                     }
-                    if (Math.abs(dis) >= 100 && Math.abs(dis) <= 200) {
+                    if (Math.abs(dis) >= 50 && Math.abs(dis) <= 100) {
                         $.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + data[i].Pincode + "&date=" + date,
                             function (data) {
                                 centers = data.centers;
@@ -149,7 +197,7 @@ StaticData.getCentersByPincode =
 
                             });
                     }
-                    if (Math.abs(dis) >= 200 && Math.abs(dis) <= 500) {
+                    if (Math.abs(dis) >= 100 && Math.abs(dis) <= 200) {
                         $.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + data[i].Pincode + "&date=" + date,
                             function (data) {
                                 centers = data.centers;
@@ -177,6 +225,5 @@ StaticData.getCentersByPincode =
             }
         );
     };
-
 
 
