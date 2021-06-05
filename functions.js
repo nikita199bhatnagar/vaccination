@@ -1,8 +1,8 @@
 $(document).ready(function () {
    console.log("ready!");
    initGeolocation();
-   StaticData.getSessionByDistrict(50,14,56);
-   toGetDistrict();
+   
+   StaticData.getSessionByDistrict(50, 14, 56);
 });
 
 var myLocation = {};
@@ -18,6 +18,7 @@ function initGeolocation() {
 function success(position) {
    myLocation.long = position.coords.longitude;
    myLocation.lat = position.coords.latitude;
+   StaticData.getCentersByPincode();
 }
 
 function fail() {
@@ -45,7 +46,6 @@ function distance(lat1, lon1, lat2, lon2, unit) {
       return dist;
    }
 }
-
 
 
 
