@@ -3,7 +3,7 @@ body{
     background-image: url("screenshot/bg10.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 97.8vh;  /*check later*/
+    height: 94.8vh;  
 }
 
 body::after{
@@ -62,6 +62,15 @@ body::after{
     color: white;
 }
 
+.a{
+    display: flex;
+    justify-content: center;
+}
+
+#tab{
+    bottom: 10%;
+}
+
 #btn{
     color: white;
     cursor: pointer;
@@ -96,7 +105,7 @@ table {
 
 th{
     padding: 20px 15px;
-    text-align: left;
+    text-align: center;
     font-weight: 500;
     font-size: 12px;
     color: #fff;
@@ -149,14 +158,10 @@ section{
 #roundAge{
     border-radius: 25px;
     background-color:#ee8bee;
-    width: 13.475%;
+    /* width: 32.052%; */
 }
 
-#roundVaccine{
-    border-radius: 25px;
-    background-color:#ee8bee;
-    width: 18.57%;
-}
+
 
 #roundB{
     border-radius: 25px;
