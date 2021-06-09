@@ -1,18 +1,9 @@
 $(document).ready(function () {
    console.log("ready!");
-   // StaticData.isLoadComplete();  //Page Loaded Completely
    initGeolocation();
-   // StaticData.load();
-   StaticData.getSessionByDistrict(50,14,56);
-   toGetDistrict();
 });
 
-$(window).on("load resize ", function() {
-   var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-   $('.tbl-header').css({'padding-right':scrollWidth});
- }).resize();
-
-
+var myLocation = {};
 function initGeolocation() {
    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, fail);
@@ -22,26 +13,16 @@ function initGeolocation() {
    }
 }
 
-
-var myLocation = {};
 function success(position) {
    myLocation.long = position.coords.longitude;
    myLocation.lat = position.coords.latitude;
+   StaticData.getCentersByPincode(600);
+   
 }
-
 
 function fail() {
    console.log("Could'nt get the location");
 }
-
-//Still In Working
-function toGetDistrict(){ //long = myLocation.long,lat = myLocation.lat
-   $("#current_location").text("DISTRICT");
-   
-   // return "DISTRICT";
-
-}
-
 
 function distance(lat1, lon1, lat2, lon2, unit) {
    if ((lat1 == lat2) && (lon1 == lon2)) {
@@ -64,7 +45,6 @@ function distance(lat1, lon1, lat2, lon2, unit) {
       return dist;
    }
 }
-
 
 
 

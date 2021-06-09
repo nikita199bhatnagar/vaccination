@@ -1,0 +1,116 @@
+{
+    "schema": {
+      "fields": [
+        {
+          "name": "index",
+          "type": "integer"
+        },
+        {
+          "name": "CorruptPincode",
+          "type": "integer"
+        }
+      ],
+      "primaryKey": [
+        "index"
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "index": 0,
+        "CorruptPincode": 212213
+      },
+      {
+        "index": 1,
+        "CorruptPincode": 796581
+      },
+      {
+        "index": 2,
+        "CorruptPincode": 754295
+      },
+      {
+        "index": 3,
+        "CorruptPincode": 695099
+      },
+      {
+        "index": 4,
+        "CorruptPincode": 628752
+      },
+      {
+        "index": 5,
+        "CorruptPincode": 628753
+      },
+      {
+        "index": 6,
+        "CorruptPincode": 591236
+      },
+      {
+        "index": 7,
+        "CorruptPincode": 581331
+      },
+      {
+        "index": 8,
+        "CorruptPincode": 577142
+      },
+      {
+        "index": 9,
+        "CorruptPincode": 577118
+      },
+      {
+        "index": 10,
+        "CorruptPincode": 535594
+      },
+      {
+        "index": 11,
+        "CorruptPincode": 535581
+      },
+      {
+        "index": 12,
+        "CorruptPincode": 535559
+      },
+      {
+        "index": 13,
+        "CorruptPincode": 535502
+      },
+      {
+        "index": 14,
+        "CorruptPincode": 494551
+      },
+      {
+        "index": 15,
+        "CorruptPincode": 493448
+      },
+      {
+        "index": 16,
+        "CorruptPincode": 425004
+      },
+      {
+        "index": 17,
+        "CorruptPincode": 424119
+      },
+      {
+        "index": 18,
+        "CorruptPincode": 416231
+      },
+      {
+        "index": 19,
+        "CorruptPincode": 415729
+      },
+      {
+        "index": 20,
+        "CorruptPincode": 415715
+      },
+      {
+        "index": 21,
+        "CorruptPincode": 388410
+      },
+      {
+        "index": 22,
+        "CorruptPincode": 229210
+      },
+      {
+        "index": 23,
+        "CorruptPincode": 229123
+      }
+    ]
+  }

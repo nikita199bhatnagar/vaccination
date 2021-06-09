@@ -8,3 +8,20 @@ Tasks List
 1. Show my current loctaion a webpage 
 2. Calculate distance from a particular location
 3. 
+\
+
+
+      "name": "ICGS Delhi",
+      "address": "MI Room, National Stadium Complex, New Delhi, 110001",
+      "district_name": "New Delhi",
+      "state_name": "Delhi",
+      "pincode": 110001,
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "date": "15-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+        ]
+
