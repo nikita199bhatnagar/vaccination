@@ -1,5 +1,4 @@
 var StaticData = {};
-StaticData.pendingUpdates = 0;
 
 var date = nextDay();
 function nextDay() {
@@ -11,9 +10,7 @@ function nextDay() {
     return today;
 }
 
-// StaticData.availableVaccinations = [];
 StaticData.onCentreDataRecieved = function (data) {
-    // StaticData.availableVaccinations.push(data.centers);
     StaticData.processSessionData(data.centers);
 }
 

@@ -1,0 +1,47 @@
+.container{    
+    color: white;
+    position: absolute;
+    padding: 0%;
+    float: left;
+    margin: 1% 4%;
+}
+
+.container h1{
+    font-family:'Heebo',sans-serif;
+    width: 50%;
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 5px solid rgba(128, 0, 128, 0.774);
+    margin-bottom: 15px;
+    padding: 13px 0;
+}
+    
+.box{
+    width: 100%;
+    margin: 22px 0px;
+    border-bottom: 2px solid purple;
+    position: relative;
+}
+
+.box select{
+    background: #00090e; 
+    /* width: 75%; */
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+/* <div class="container">
+<h1>Location</h1>
+<div class="box">
+  <select name="Distance" id="Distance" onchange="Interface.setDistance()">
+    <option value="0">Enter Distance</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+  </select>
+</div>
+<button id="btn" onclick="Interface.setDistance()">Start</button>
+</div> */

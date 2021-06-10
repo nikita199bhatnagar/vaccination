@@ -5,14 +5,20 @@
   <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
   <!-- <script src="https://kit.fontawesome.com/433888fe69.js" crossorigin="anonymous"></script> -->
   <!-- <i class="fa fa-envelope"></i><i class="fa fa-key"></i> -->
+  <!--For adding icon for username and password-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
     integrity="sha512-3GRj7sme01zpWwRNPNy48Rda1bD9cq34lqYG5vb8ZXGc+wRqsoBJ3+AC25IYW5w5SrWlzHqIpNIxZt5QF9sXLg=="
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--For filter table-->
   <script src="interface.js"></script>
   <script src="staticData.js"></script>
   <script src="functions.js"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="table.css">
+  <link rel="stylesheet" href="container.css">
+  <link rel="stylesheet" href="buttonGroup.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,34 +30,18 @@
 <body>
 
   <header id="title"><img src="Screenshot/logoNew.png"></header>
-  <div class="container">
-    <h1>Location</h1>
-    <div class="box">
-      <select name="Distance" id="Distance" onchange="Interface.setDistance()">
-        <option value="0">Enter Distance</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-        <option value="200">200</option>
-      </select>
-    </div>
-    <button id="btn" onclick="Interface.setDistance()">Start</button>
-  </div>
-
   <div>
     <div class="a">
       <div class="btn-group" id="roundAge">
-        <button id="roundB">18+</button>
-        <button id="roundB">45+</button>
-        <!-- <button id="roundB">All</button> -->
-        <button id="roundB">Covisheild</button>
-        <button id="roundB">Covaxin</button>
-        <!-- <button id="roundB">Both</button> -->
+        <button class="roundB" id="ageB" value="15">18+</button>
+        <button class="roundB">45+</button>
+        <button class="roundB">Covisheild</button>
+        <button class="roundB">Covaxin</button>
       </div>
     </div>
 
     <section id="tab">
       <div class="tbl-header">
-
         <table>
           <thead>
             <tr>
@@ -67,6 +57,26 @@
         </table>
       </div>
       <div class="tbl-content" id="viewCenters">
+        <script>
+      var condition = true;
+      $("#ageB").on("click", function () {
+        if (condition == true) {
+          $("#ageB").css("background-color", "purple");
+          var value = $("#ageB").val();
+          $("#geeks tr").filter(function () {
+            $(this).toggle($(this).text()
+              .toLowerCase().indexOf(value) > -1)
+            console.log(value);
+          });
+          condition = false;
+        }
+        else  { 
+          $("#ageB").css("background-color", "#ee8bee");
+          $('#ageB').val('').trigger('click').focus();
+          condition = true;
+        }
+      });
+    </script>
       </div>
     </section>
   </div>
@@ -81,3 +91,59 @@
         loadNearbyCovidCentresMapmyIndiaDiv(document.getElementById("nearby-covid-places-mapmyindia"));
     </script>
     </div> -->
+
+
+
+
+    <!-- <script>
+      var condition = true;
+      $("#ageB").on("click", function () {
+        if (condition == true) {
+          $("#ageB").css("background-color", "purple");
+          var value = $("#ageB").val();
+          $("#geeks tr").filter(function () {
+            $(this).toggle($(this).text()
+              .toLowerCase().indexOf(value) > -1)
+            console.log(value);
+          });
+          condition = false;
+        }
+        else  { 
+          $("#ageB").css("background-color", "#ee8bee");
+          $('#ageB').val('').trigger('click').focus();
+          condition = true;
+        }
+      });
+    </script> -->
+
+
+
+
+    <!-- <script>
+      var condition = false;
+      $("#ageB").on("click", function () {
+        condition = !condition;
+        if (condition == true) {
+          $("#ageB").css("background-color", "purple");
+          var value = $("#ageB").val();
+          $("#geeks tr").filter(function () {
+            $(this).toggle($(this).text()
+              .toLowerCase().indexOf(value) > -1)
+            console.log(value);
+          });
+        }
+
+        if (condition == false) {
+          $("#ageB").css("background-color", "#ee8bee");
+          $('#ageB').val('').trigger('click').focus();
+          condition = true;
+          // var value = null;
+          // $("#geeks tr").filter(function () {
+          //   $(this).toggle($(this).text()
+          //     .toLowerCase().indexOf(value) > -1)
+          //   console.log(value);
+          // });
+        }
+        // var value = $(this).val().toLowerCase();
+      });
+    </script> -->
