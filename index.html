@@ -33,13 +33,12 @@
   <div>
     <div class="a">
       <div class="btn-group" id="roundAge">
-        <button class="roundB" id="ageB" value="15">18+</button>
-        <button class="roundB">45+</button>
+        <button class="roundB" id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
+        <button class="roundB" id="age45" value="45" onclick="Interface.setFilter({'min_age_limit':45})">45+</button>
         <button class="roundB">Covisheild</button>
         <button class="roundB">Covaxin</button>
       </div>
     </div>
-
     <section id="tab">
       <div class="tbl-header">
         <table>
@@ -57,26 +56,6 @@
         </table>
       </div>
       <div class="tbl-content" id="viewCenters">
-        <script>
-      var condition = true;
-      $("#ageB").on("click", function () {
-        if (condition == true) {
-          $("#ageB").css("background-color", "purple");
-          var value = $("#ageB").val();
-          $("#geeks tr").filter(function () {
-            $(this).toggle($(this).text()
-              .toLowerCase().indexOf(value) > -1)
-            console.log(value);
-          });
-          condition = false;
-        }
-        else  { 
-          $("#ageB").css("background-color", "#ee8bee");
-          $('#ageB').val('').trigger('click').focus();
-          condition = true;
-        }
-      });
-    </script>
       </div>
     </section>
   </div>
