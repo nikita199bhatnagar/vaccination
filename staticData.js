@@ -43,6 +43,7 @@ StaticData.updateDistances = function (data) {
 
 StaticData.getCentersByPincode = function (range) {
     // update distances
+    console.log(range);
     StaticData.finalOutput = [];
     StaticData.range = range;
     $.getJSON("test.json",
@@ -57,7 +58,7 @@ StaticData.processSessionData =
         for (var centre_no = 0; centre_no < data.length; centre_no++) {
             // iterate through centre
             var centre = data[centre_no];
-            var address = centre.address + centre.district_name + centre.state_name;
+            var address = centre.address +", "+ centre.district_name +", "+  centre.state_name;
             console.log(address);
             for (var session_no = 0; session_no < centre.sessions.length; session_no++) {
                 var obj = {};

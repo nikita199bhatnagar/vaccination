@@ -46,5 +46,10 @@ function distance(lat1, lon1, lat2, lon2, unit) {
    }
 }
 
-
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.getAttribute(value);
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
 

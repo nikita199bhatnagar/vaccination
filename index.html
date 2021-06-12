@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="table.css">
   <link rel="stylesheet" href="container.css">
   <link rel="stylesheet" href="buttonGroup.css">
+  <link rel="stylesheet" href="slider.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,33 +32,28 @@
 
   <header id="title"><img src="Screenshot/logoNew.png"></header>
   <div>
+
     <div class="a">
       <div class="btn-group" id="roundAge">
         <button class="roundB" id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
         <button class="roundB" id="age45" value="45" onclick="Interface.setFilter({'min_age_limit':45})">45+</button>
-        <button class="roundB">Covisheild</button>
-        <button class="roundB">Covaxin</button>
+        <button class="roundB" id="vaccineSH" value="Covisheild"  onclick="Interface.setFilter({'vaccine':'COVISHIELD'})">Covisheild</button>
+        <button class="roundB" id="vaccineXI" value="Covaxin"  onclick="Interface.setFilter({'vaccine':'COVAXIN'})">Covaxin</button>
+        <button class="roundB" id="vaccineSP" value="Sputnik"  onclick="Interface.setFilter({'vaccine':'SPUTNIK'})">Sputnik</button>
+        <button class="roundB" id="all" value="All"  onclick="Interface.setFilter()">All</button>
       </div>
     </div>
     <section id="tab">
-      <div class="tbl-header">
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Availability</th>
-              <th>Age</th>
-              <th>Fee Type</th>
-              <th>Vaccine</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
+      <!-- <div class="tbl-header">
+        
+      </div> -->
       <div class="tbl-content" id="viewCenters">
       </div>
     </section>
+    <!-- <div class="slidecontainer">
+      <input type="range" min="50" max="10000" value="1000" class="slider" id="myRange" onchange="StaticData.getCentersByPincode(value)">
+      <p>Value: <span id="demo"></span></p>
+    </div> -->
   </div>
 
 </body>

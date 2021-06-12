@@ -17,9 +17,9 @@ table {
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-.tbl-header{
+/* .tbl-header{
     background-color: #f5b4f5c4;
-}
+} */
 
 .tbl-content{
     height:300px;
@@ -30,7 +30,7 @@ table {
 }
 
 th{
-    padding: 20px 15px;
+    padding: 14px 15px;
     text-align: center;
     font-weight: 500;
     font-size: 12px;
