@@ -1,23 +1,23 @@
 var Interface = {};
 Interface.template =
-    `<table id = "tbl-header">
-          <thead style = "background-color: #f5b4f5c4;position: -webkit-sticky;position: sticky;top: 0;">
+    `<table>
+          <thead>
             <tr>
               <th>Date</th>
               <th>Name</th>
               <th>Address</th>
               <th>Availability</th>
               <th>Age</th>
-              <th>Fee Type</th>
+              <th>Fee</th>
               <th>Vaccine</th>
             </tr>
           </thead>
             <tbody id="geeks">
             {{#finalOutput}}
                 <tr>
-                    <td style = "width: 12% ">{{ date }}</td>
+                    <td id="date">{{ date }}</td>
                     <td>{{ name }}</td>
-                    <td>{{ address }}</td>
+                    <td id="address">{{ address }}</td>
                     <td>{{ available_capacity }}</td>
                     <td>{{ min_age_limit }}</td>
                     <td>{{ fee_type }}</td>
@@ -29,32 +29,32 @@ Interface.template =
 
 Interface.buttonCSS = function (condition) {
     if (condition.min_age_limit == 18) {
-        $("#age18").css("background-color", "purple");
-        $("#age45").css("background-color", "#ee8bee");
-        $("#all").css("background-color", "#ee8bee");
+        $("#age18").css("background-color", "#5f367e");
+        $("#age45").css("background-color", "#bd77f2");
+        $("#all").css("background-color", "#bd77f2");
     }
     else if (condition.min_age_limit == 45) {
-        $("#age18").css("background-color", "#ee8bee");
-        $("#age45").css("background-color", "purple");
-        $("#all").css("background-color", "#ee8bee");
+        $("#age18").css("background-color", "#bd77f2");
+        $("#age45").css("background-color", "#5f367e");
+        $("#all").css("background-color", "#bd77f2");
     }
     else if (condition.vaccine == 'COVISHIELD') {
-        $("#vaccineSH").css("background-color", "purple");
-        $("#vaccineXI").css("background-color", "#ee8bee");
-        $("#vaccineSP").css("background-color", "#ee8bee");
-        $("#all").css("background-color", "#ee8bee");
+        $("#vaccineSH").css("background-color", "#5f367e");
+        $("#vaccineXI").css("background-color", "#bd77f2");
+        $("#vaccineSP").css("background-color", "#bd77f2");
+        $("#all").css("background-color", "#bd77f2");
     }
     else if (condition.vaccine == 'COVAXIN') {
-        $("#vaccineSH").css("background-color", "#ee8bee");
-        $("#vaccineXI").css("background-color", "purple");
-        $("#vaccineSP").css("background-color", "#ee8bee");
-        $("#all").css("background-color", "#ee8bee");
+        $("#vaccineSH").css("background-color", "#bd77f2");
+        $("#vaccineXI").css("background-color", "#5f367e");
+        $("#vaccineSP").css("background-color", "#bd77f2");
+        $("#all").css("background-color", "#bd77f2");
     }
     else if (condition.vaccine == 'SPUTNIK') {
-        $("#vaccineSH").css("background-color", "#ee8bee");
-        $("#vaccineXI").css("background-color", "#ee8bee");
-        $("#vaccineSP").css("background-color", "purple");
-        $("#all").css("background-color", "#ee8bee");
+        $("#vaccineSH").css("background-color", "#bd77f2");
+        $("#vaccineXI").css("background-color", "#bd77f2");
+        $("#vaccineSP").css("background-color", "#5f367e");
+        $("#all").css("background-color", "#bd77f2");
     }
 }
 
@@ -100,13 +100,12 @@ Interface.paintFiltered =
 
 Interface.repaint =
     function () {
-        // Interface.filter_condition = {};
-        $("#vaccineSH").css("background-color", "#ee8bee");
-        $("#vaccineXI").css("background-color", "#ee8bee");
-        $("#vaccineSP").css("background-color", "#ee8bee");
-        $("#age18").css("background-color", "#ee8bee");
-        $("#age45").css("background-color", "#ee8bee");
-        $("#all").css("background-color", "purple");
+        $("#vaccineSH").css("background-color", "#bd77f2");
+        $("#vaccineXI").css("background-color", "#bd77f2");
+        $("#vaccineSP").css("background-color", "#bd77f2");
+        $("#age18").css("background-color", "#bd77f2");
+        $("#age45").css("background-color", "#bd77f2");
+        $("#all").css("background-color", "#5f367e");
         var text = Mustache.render(Interface.template, StaticData);
         $("#viewCenters").html(text);
         console.log("Repaint");

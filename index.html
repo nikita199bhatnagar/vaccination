@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
   <!-- <script src="https://kit.fontawesome.com/433888fe69.js" crossorigin="anonymous"></script> -->
@@ -37,22 +37,30 @@
       <div class="btn-group" id="roundAge">
         <button class="roundB" id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
         <button class="roundB" id="age45" value="45" onclick="Interface.setFilter({'min_age_limit':45})">45+</button>
-        <button class="roundB" id="vaccineSH" value="Covisheild"  onclick="Interface.setFilter({'vaccine':'COVISHIELD'})">Covisheild</button>
-        <button class="roundB" id="vaccineXI" value="Covaxin"  onclick="Interface.setFilter({'vaccine':'COVAXIN'})">Covaxin</button>
-        <button class="roundB" id="vaccineSP" value="Sputnik"  onclick="Interface.setFilter({'vaccine':'SPUTNIK'})">Sputnik</button>
-        <button class="roundB" id="all" value="All"  onclick="Interface.setFilter()">All</button>
+        <button class="roundB" id="vaccineSH" value="Covisheild"
+          onclick="Interface.setFilter({'vaccine':'COVISHIELD'})">Covisheild</button>
+        <button class="roundB" id="vaccineXI" value="Covaxin"
+          onclick="Interface.setFilter({'vaccine':'COVAXIN'})">Covaxin</button>
+        <button class="roundB" id="vaccineSP" value="Sputnik"
+          onclick="Interface.setFilter({'vaccine':'SPUTNIK'})">Sputnik</button>
+        <button class="roundB" id="all" value="All" onclick="Interface.setFilter()">All</button>
       </div>
     </div>
     <section id="tab">
-      <!-- <div class="tbl-header">
-        
-      </div> -->
       <div class="tbl-content" id="viewCenters">
       </div>
     </section>
+
+    <!-- <div id="nearby-covid-places-mapmyindia">
+    <script type="text/javascript">
+        loadNearbyCovidCentresMapmyIndiaDiv(document.getElementById("nearby-covid-places-mapmyindia"));
+    </script>
+    </div> -->
+
+  
     <!-- <div class="slidecontainer">
-      <input type="range" min="50" max="10000" value="1000" class="slider" id="myRange" onchange="StaticData.getCentersByPincode(value)">
-      <p>Value: <span id="demo"></span></p>
+    <input type="range" min="50" max="10000" value="1000" class="slider" id="myRange" onchange="StaticData.getCentersByPincode(value)">
+    <p>Value: <span id="demo"></span></p>
     </div> -->
   </div>
 
@@ -60,65 +68,3 @@
 
 </html>
 
-
-<!-- <div id="nearby-covid-places-mapmyindia">
-    <script type="text/javascript">
-        loadNearbyCovidCentresMapmyIndiaDiv(document.getElementById("nearby-covid-places-mapmyindia"));
-    </script>
-    </div> -->
-
-
-
-
-    <!-- <script>
-      var condition = true;
-      $("#ageB").on("click", function () {
-        if (condition == true) {
-          $("#ageB").css("background-color", "purple");
-          var value = $("#ageB").val();
-          $("#geeks tr").filter(function () {
-            $(this).toggle($(this).text()
-              .toLowerCase().indexOf(value) > -1)
-            console.log(value);
-          });
-          condition = false;
-        }
-        else  { 
-          $("#ageB").css("background-color", "#ee8bee");
-          $('#ageB').val('').trigger('click').focus();
-          condition = true;
-        }
-      });
-    </script> -->
-
-
-
-
-    <!-- <script>
-      var condition = false;
-      $("#ageB").on("click", function () {
-        condition = !condition;
-        if (condition == true) {
-          $("#ageB").css("background-color", "purple");
-          var value = $("#ageB").val();
-          $("#geeks tr").filter(function () {
-            $(this).toggle($(this).text()
-              .toLowerCase().indexOf(value) > -1)
-            console.log(value);
-          });
-        }
-
-        if (condition == false) {
-          $("#ageB").css("background-color", "#ee8bee");
-          $('#ageB').val('').trigger('click').focus();
-          condition = true;
-          // var value = null;
-          // $("#geeks tr").filter(function () {
-          //   $(this).toggle($(this).text()
-          //     .toLowerCase().indexOf(value) > -1)
-          //   console.log(value);
-          // });
-        }
-        // var value = $(this).val().toLowerCase();
-      });
-    </script> -->
