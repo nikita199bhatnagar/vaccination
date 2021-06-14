@@ -10,8 +10,8 @@ function nextDay() {
     return today;
 }
 
-StaticData.onCentreDataRecieved = function (data) {
-    StaticData.processSessionData(data.centers);
+StaticData.onCentreDataRecieved = function (data, dis) {
+    StaticData.processSessionData(data.centers, dis);
 }
 
 StaticData.loadCentersByPincode = function (value, index, array) {
@@ -19,7 +19,7 @@ StaticData.loadCentersByPincode = function (value, index, array) {
         console.log(value);
         $.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + value.Pincode + "&date=" + date,
             function (json) {
-                StaticData.onCentreDataRecieved(json);
+                StaticData.onCentreDataRecieved(json, value.distance);
             });
     }
 };
@@ -54,7 +54,7 @@ StaticData.getCentersByPincode = function (range) {
 };
 
 StaticData.processSessionData =
-    function (data) {
+    function (data, dis) {
         for (var centre_no = 0; centre_no < data.length; centre_no++) {
             // iterate through centre
             var centre = data[centre_no];
@@ -66,6 +66,9 @@ StaticData.processSessionData =
                 if (session.available_capacity > 0) {
                     obj.date = session.date;
                     obj.name = centre.name;
+                    obj.distance = dis.toFixed(2);
+                    obj.pincode = centre.pincode;
+                    obj.district = centre.district_name;
                     obj.address = address;
                     obj.available_capacity = session.available_capacity;
                     obj.min_age_limit = session.min_age_limit;

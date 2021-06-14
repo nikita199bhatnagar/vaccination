@@ -16,7 +16,7 @@ function initGeolocation() {
 function success(position) {
    myLocation.long = position.coords.longitude;
    myLocation.lat = position.coords.latitude;
-   StaticData.getCentersByPincode(25000);
+   // StaticData.getCentersByPincode(5000);
    
 }
 
@@ -45,11 +45,3 @@ function distance(lat1, lon1, lat2, lon2, unit) {
       return dist;
    }
 }
-
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.getAttribute(value);
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-

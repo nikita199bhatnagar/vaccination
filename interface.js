@@ -5,23 +5,29 @@ Interface.template =
             <tr>
               <th>Date</th>
               <th>Name</th>
+              <th>Pincode</th>
+              <th>District</th>
               <th>Address</th>
               <th>Availability</th>
               <th>Age</th>
               <th>Fee</th>
               <th>Vaccine</th>
+              <th>Distance</th>
             </tr>
           </thead>
             <tbody id="geeks">
             {{#finalOutput}}
                 <tr>
                     <td id="date">{{ date }}</td>
-                    <td>{{ name }}</td>
+                    <td id="name">{{ name }}</td>
+                    <td>{{ pincode }}</td>
+                    <td>{{ district }}</td>
                     <td id="address">{{ address }}</td>
                     <td>{{ available_capacity }}</td>
                     <td>{{ min_age_limit }}</td>
                     <td>{{ fee_type }}</td>
                     <td>{{ vaccine }}</td>
+                    <td>{{ distance }}</td>
                 </tr>
             {{/finalOutput}}  
             </tbody>
@@ -61,6 +67,7 @@ Interface.buttonCSS = function (condition) {
 Interface.filter_condition = {};
 Interface.setFilter = function (condition) {
     if (condition == undefined) {
+        Interface.filter_condition = {}; //Check Later
         Interface.repaint();
         return;
     }
