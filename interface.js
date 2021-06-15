@@ -66,6 +66,8 @@ Interface.buttonCSS = function (condition) {
 
 Interface.filter_condition = {};
 Interface.setFilter = function (condition) {
+    console.log("Called: Interface.setFilter");
+
     if (condition == undefined) {
         Interface.filter_condition = {}; //Check Later
         Interface.repaint();
@@ -84,6 +86,7 @@ Interface.setFilter = function (condition) {
 Interface.filtereddata = {};
 Interface.paintFiltered =
     function (filtercondition) {
+        console.log("Called: Interface.paintFiltered");
 
         var keystocheck = ['min_age_limit', 'fee_type', 'vaccine'];
         var filtereddata = {};
@@ -107,6 +110,8 @@ Interface.paintFiltered =
 
 Interface.repaint =
     function () {
+        Interface.filter_condition = {};
+        console.log("Called: Interface.repaint");
         $("#vaccineSH").css("background-color", "#bd77f2");
         $("#vaccineXI").css("background-color", "#bd77f2");
         $("#vaccineSP").css("background-color", "#bd77f2");
@@ -115,6 +120,6 @@ Interface.repaint =
         $("#all").css("background-color", "#5f367e");
         var text = Mustache.render(Interface.template, StaticData);
         $("#viewCenters").html(text);
-        console.log("Repaint");
+        // console.log("Repaint");
     };
 

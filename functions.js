@@ -1,5 +1,5 @@
 $(document).ready(function () {
-   console.log("ready!");
+   // console.log("ready!");
    initGeolocation();
 });
 
@@ -16,8 +16,7 @@ function initGeolocation() {
 function success(position) {
    myLocation.long = position.coords.longitude;
    myLocation.lat = position.coords.latitude;
-   // StaticData.getCentersByPincode(5000);
-   
+   StaticData.getCentersByPincode(50);
 }
 
 function fail() {
