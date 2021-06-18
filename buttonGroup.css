@@ -1,28 +1,6 @@
-.a{
+.allButtons{
     display: flex;
-    justify-content: center;
-}
-
-#btn{
-    color: white;
-    cursor: pointer;
-    outline: none;
-    margin: 12px 0;
-    padding: 10px 21px;
-    border: 2px solid #5f367e;
-    border-radius: 10px;
-    font-size: 18px;
-    background: none;
-    font-weight: bold;
-}
-
-.btn-group button{
-    background-color:#bd77f2; /* Green background */
-    border: 1px #bd77f2; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */ 
+    justify-content:space-around;
 }
 
 #roundAge{
@@ -34,19 +12,37 @@
 .roundB{
     border-radius: 25px;
 }
-  
+ 
+.btn-group button{
+    background-color:#bd77f2; 
+    border: 1px #bd77f2;
+    color: white; 
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left; 
+}
+
 .btn-group button:not(:last-child){
     border-right: none;
 }
-  
+
 .btn-group:after{
     content: "";
     clear: both;
     display: table;
 }
 
-
 .btn-group button:hover{
     background-color: #5f367e;
 }
 
+/* 
+.button:hover {
+    background-color: #3e8e41
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+} */

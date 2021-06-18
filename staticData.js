@@ -1,5 +1,7 @@
 var StaticData = {};
 
+StaticData.requestCount = 0;
+
 var date = nextDay();
 function nextDay() {
     var today = new Date();
@@ -10,16 +12,19 @@ function nextDay() {
     return today;
 }
 
-StaticData.onCentreDataRecieved = function (data) {
-    StaticData.processSessionData(data.centers);
+StaticData.onCentreDataRecieved = function (data, dis) {
+    StaticData.requestCount--;
+    console.log("Called: StaticData.onCentreDataRecieved", StaticData.requestCount);
+    StaticData.processSessionData(data.centers, dis);
 }
 
 StaticData.loadCentersByPincode = function (value, index, array) {
     if (value.distance <= StaticData.range) {
-        console.log(value);
+        // console.log(value);
+        StaticData.requestCount++;
         $.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + value.Pincode + "&date=" + date,
             function (json) {
-                StaticData.onCentreDataRecieved(json);
+                StaticData.onCentreDataRecieved(json, value.distance);
             });
     }
 };
@@ -35,7 +40,7 @@ StaticData.updateDistances = function (data) {
         pin.distance = distance(myLocation.lat, myLocation.long, lat, long, "K");
         StaticData.allPinCodes.push(pin);
     }
-    console.log("loaded pin codes");
+    // console.log("loaded pin codes");
     StaticData.availableVaccinations = [];
     StaticData.allPinCodes.forEach(StaticData.loadCentersByPincode);
 };
@@ -43,10 +48,11 @@ StaticData.updateDistances = function (data) {
 
 StaticData.getCentersByPincode = function (range) {
     // update distances
-    console.log(range);
+    // console.log(range);
+    StaticData.requestCount = 0;
     StaticData.finalOutput = [];
     StaticData.range = range;
-    $.getJSON("test.json",
+    $.getJSON("pincodeWithCoord.json",
         function (json) {
             StaticData.updateDistances(json.data);
         }
@@ -54,18 +60,22 @@ StaticData.getCentersByPincode = function (range) {
 };
 
 StaticData.processSessionData =
-    function (data) {
+    function (data, dis) {
+        console.log("Called: StaticData.processSessionData");
         for (var centre_no = 0; centre_no < data.length; centre_no++) {
             // iterate through centre
             var centre = data[centre_no];
             var address = centre.address +", "+ centre.district_name +", "+  centre.state_name;
-            console.log(address);
+            // console.log(address);
             for (var session_no = 0; session_no < centre.sessions.length; session_no++) {
                 var obj = {};
                 var session = centre.sessions[session_no];
                 if (session.available_capacity > 0) {
                     obj.date = session.date;
                     obj.name = centre.name;
+                    obj.distance = dis.toFixed(2);
+                    obj.pincode = centre.pincode;
+                    obj.district = centre.district_name;
                     obj.address = address;
                     obj.available_capacity = session.available_capacity;
                     obj.min_age_limit = session.min_age_limit;

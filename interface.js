@@ -5,23 +5,29 @@ Interface.template =
             <tr>
               <th>Date</th>
               <th>Name</th>
+              <th>Pincode</th>
+              <th>District</th>
               <th>Address</th>
               <th>Availability</th>
               <th>Age</th>
               <th>Fee</th>
               <th>Vaccine</th>
+              <th>Distance</th>
             </tr>
           </thead>
             <tbody id="geeks">
             {{#finalOutput}}
                 <tr>
                     <td id="date">{{ date }}</td>
-                    <td>{{ name }}</td>
+                    <td id="name">{{ name }}</td>
+                    <td>{{ pincode }}</td>
+                    <td>{{ district }}</td>
                     <td id="address">{{ address }}</td>
                     <td>{{ available_capacity }}</td>
                     <td>{{ min_age_limit }}</td>
                     <td>{{ fee_type }}</td>
                     <td>{{ vaccine }}</td>
+                    <td>{{ distance }}</td>
                 </tr>
             {{/finalOutput}}  
             </tbody>
@@ -60,7 +66,10 @@ Interface.buttonCSS = function (condition) {
 
 Interface.filter_condition = {};
 Interface.setFilter = function (condition) {
+    console.log("Called: Interface.setFilter");
+
     if (condition == undefined) {
+        Interface.filter_condition = {}; //Check Later
         Interface.repaint();
         return;
     }
@@ -77,6 +86,7 @@ Interface.setFilter = function (condition) {
 Interface.filtereddata = {};
 Interface.paintFiltered =
     function (filtercondition) {
+        console.log("Called: Interface.paintFiltered");
 
         var keystocheck = ['min_age_limit', 'fee_type', 'vaccine'];
         var filtereddata = {};
@@ -100,6 +110,8 @@ Interface.paintFiltered =
 
 Interface.repaint =
     function () {
+        Interface.filter_condition = {};
+        console.log("Called: Interface.repaint");
         $("#vaccineSH").css("background-color", "#bd77f2");
         $("#vaccineXI").css("background-color", "#bd77f2");
         $("#vaccineSP").css("background-color", "#bd77f2");
@@ -108,6 +120,6 @@ Interface.repaint =
         $("#all").css("background-color", "#5f367e");
         var text = Mustache.render(Interface.template, StaticData);
         $("#viewCenters").html(text);
-        console.log("Repaint");
+        // console.log("Repaint");
     };
 
