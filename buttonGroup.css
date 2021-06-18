@@ -1,11 +1,13 @@
 .allButtons{
-    display: flex;
-    justify-content:space-around;
+    /* display: flex; */
+    justify-content:center;
 }
 
 #roundAge{
     border-radius: 25px;
     background-color:#bd77f2;
+    text-align: center;
+    justify-content: center;
     /* width: 32.052%; */
 }
 

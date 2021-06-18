@@ -1,58 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="table.css" />
+    <link rel="stylesheet" href="container.css" />
+    <link rel="stylesheet" href="buttonGroup.css" />
+    <link rel="stylesheet" href="slider.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaccine Availability Checker</title>
+    <link rel="shortcut icon" href="screenshot/logo2.png" type="image/x-icon" />
+  </head>
 
-<head>
-  <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
-    integrity="sha512-3GRj7sme01zpWwRNPNy48Rda1bD9cq34lqYG5vb8ZXGc+wRqsoBJ3+AC25IYW5w5SrWlzHqIpNIxZt5QF9sXLg=="
-    crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="interface.js"></script>
-  <script src="staticData.js"></script>
-  <script src="functions.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="table.css">
-  <link rel="stylesheet" href="container.css">
-  <link rel="stylesheet" href="buttonGroup.css">
-  <link rel="stylesheet" href="slider.css">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaccine Availability Checker</title>
-  <link rel="shortcut icon" href="screenshot/logo2.png" type="image/x-icon">
-
-</head>
-
-<body>
-
-  <header id="title"><a href=""><img src="screenshot/logoNew.png"></a></header>
+  <body>
+    <header id="title">
+      <img id = "logo" onClick = "location.reload()"src="screenshot/logoNew.png" />
+      <div class="head_text">Vaccine Availability Checker</div>
+    </header>
 
     <div class="allButtons">
-
       <div class="slidecontainer">
-        <input id="myRange" type="range" min="50" max="300" value="50" step="10" onchange="StaticData.getCentersByPincode(value)">
+        <input
+          id="myRange"
+          type="range"
+          min="50"
+          max="300"
+          value="50"
+          step="10"
+          onchange="StaticData.getCentersByPincode(value)"
+        />
       </div>
 
       <div class="btn-group" id="roundAge">
-        <button class="roundB" id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
-        <button class="roundB" id="age45" value="45" onclick="Interface.setFilter({'min_age_limit':45})">45+</button>
-        <button class="roundB" id="vaccineSH" value="Covisheild" onclick="Interface.setFilter({'vaccine':'COVISHIELD'})">Covisheild</button>
-        <button class="roundB" id="vaccineXI" value="Covaxin" onclick="Interface.setFilter({'vaccine':'COVAXIN'})">Covaxin</button>
-        <button class="roundB" id="vaccineSP" value="Sputnik" onclick="Interface.setFilter({'vaccine':'SPUTNIK'})">Sputnik</button>
-        <button class="roundB" id="all" value="All" onclick="Interface.setFilter()">All</button>
-
+        <button
+          class="roundB"
+          id="age18"
+          value="18"
+          onclick="Interface.setFilter({'min_age_limit':18})"
+        >
+          18+
+        </button>
+        <button
+          class="roundB"
+          id="age45"
+          value="45"
+          onclick="Interface.setFilter({'min_age_limit':45})"
+        >
+          45+
+        </button>
+        <button
+          class="roundB"
+          id="vaccineSH"
+          value="Covisheild"
+          onclick="Interface.setFilter({'vaccine':'COVISHIELD'})"
+        >
+          Covisheild
+        </button>
+        <button
+          class="roundB"
+          id="vaccineXI"
+          value="Covaxin"
+          onclick="Interface.setFilter({'vaccine':'COVAXIN'})"
+        >
+          Covaxin
+        </button>
+        <button
+          class="roundB"
+          id="vaccineSP"
+          value="Sputnik"
+          onclick="Interface.setFilter({'vaccine':'SPUTNIK'})"
+        >
+          Sputnik
+        </button>
+        <button
+          class="roundB"
+          id="all"
+          value="All"
+          onclick="Interface.setFilter()"
+        >
+          All
+        </button>
       </div>
-
     </div>
 
     <section>
-
-      <div class="tbl-content" id="viewCenters">
-      </div>
+      <div class="tbl-content" id="viewCenters"></div>
     </section>
-
-
-</body>
-
+    <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
+      integrity="sha512-3GRj7sme01zpWwRNPNy48Rda1bD9cq34lqYG5vb8ZXGc+wRqsoBJ3+AC25IYW5w5SrWlzHqIpNIxZt5QF9sXLg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="interface.js"></script>
+    <script src="staticData.js"></script>
+    <script src="functions.js"></script>
+  </body>
 </html>
