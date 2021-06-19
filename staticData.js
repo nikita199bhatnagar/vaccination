@@ -52,7 +52,7 @@ StaticData.getCentersByPincode = function (range) {
     StaticData.requestCount = 0;
     StaticData.finalOutput = [];
     StaticData.range = range;
-    $.getJSON("test.json",
+    $.getJSON("pincodeWithCoord.json",
         function (json) {
             StaticData.updateDistances(json.data);
         }

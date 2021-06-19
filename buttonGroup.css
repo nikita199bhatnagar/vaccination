@@ -1,50 +1,27 @@
-.allButtons{
-    /* display: flex; */
-    justify-content:center;
+.all_buttons{
+    margin-top: 2%;
 }
 
-#roundAge{
-    border-radius: 25px;
-    background-color:#bd77f2;
+.btn_parent{
+    margin: 0;
     text-align: center;
     justify-content: center;
-    /* width: 32.052%; */
+    display: flex;
 }
 
-.roundB{
+.btn-group{
+    text-align: center;
+    width: auto;
     border-radius: 25px;
+    background-color:#bd77f2;
 }
- 
+
 .btn-group button{
     background-color:#bd77f2; 
     border: 1px #bd77f2;
     color: white; 
     padding: 10px 24px;
     cursor: pointer;
-    float: left; 
+    /* float: left;  */
+    border-radius: 25px;
 }
-
-.btn-group button:not(:last-child){
-    border-right: none;
-}
-
-.btn-group:after{
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.btn-group button:hover{
-    background-color: #5f367e;
-}
-
-/* 
-.button:hover {
-    background-color: #3e8e41
-}
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-} */

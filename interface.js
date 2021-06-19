@@ -34,6 +34,7 @@ Interface.template =
         </table>`;
 
 Interface.buttonCSS = function (condition) {
+
     if (condition.min_age_limit == 18) {
         $("#age18").css("background-color", "#5f367e");
         $("#age45").css("background-color", "#bd77f2");
@@ -67,7 +68,7 @@ Interface.buttonCSS = function (condition) {
 Interface.filter_condition = {};
 Interface.setFilter = function (condition) {
     console.log("Called: Interface.setFilter");
-
+    
     if (condition == undefined) {
         Interface.filter_condition = {}; //Check Later
         Interface.repaint();
@@ -79,7 +80,7 @@ Interface.setFilter = function (condition) {
     if (condition.vaccine !== undefined) {
         Interface.filter_condition.vaccine = condition.vaccine;
     }
-    Interface.buttonCSS(condition);
+    Interface.buttonCSS(condition);  //------------------------------------------------------------------------------------------------------------
     Interface.paintFiltered(Interface.filter_condition);
 }
 
