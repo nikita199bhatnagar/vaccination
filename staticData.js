@@ -52,7 +52,7 @@ StaticData.getCentersByPincode = function (range) {
     StaticData.requestCount = 0;
     StaticData.finalOutput = [];
     StaticData.range = range;
-    $.getJSON("pincodeWithCoord.json",
+    $.getJSON("test.json",
         function (json) {
             StaticData.updateDistances(json.data);
         }
@@ -73,7 +73,7 @@ StaticData.processSessionData =
                 if (session.available_capacity > 0) {
                     obj.date = session.date;
                     obj.name = centre.name;
-                    obj.distance = dis.toFixed(2);
+                    obj.distance = dis.toFixed(0);
                     obj.pincode = centre.pincode;
                     obj.district = centre.district_name;
                     obj.address = address;
