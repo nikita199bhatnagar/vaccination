@@ -34,5 +34,3 @@ Sticky Header
 Remove button select
 Mobile responsive
 about us 
-push repeat problem to solve
-

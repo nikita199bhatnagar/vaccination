@@ -104,23 +104,18 @@ Interface.paintFiltered =
         $("#viewCenters").html(text);
     };
 
+function checkWhetherToPush(arr, val) {
+    return arr.some(function (arrVal) {
+        return val.sessionID === arrVal.sessionID;
+    });
+}
+
 Interface.InstertFilteredDataSorted = function (session)  //On basis of distance
 {
-
-    // for (var i = 0; session != undefined ; i++) {
-    //     if (Interface.filtereddata.finalOutput[i])
-    //     if (Interface.filtereddata.finalOutput[i].sessionID == session.sessionID) {alert("yo");}
-    //     else {
-    //         Interface.filtereddata.finalOutput.push(session);
-    //         Interface.filtereddata.finalOutput.sort((firstItem, secondItem) => firstItem.distance - secondItem.distance);
-    //     }
-    // }
-    Interface.filtereddata.finalOutput.push(session);
-            Interface.filtereddata.finalOutput.sort((firstItem, secondItem) => firstItem.distance - secondItem.distance);
-
-
-
-
+    if (!checkWhetherToPush(Interface.filtereddata.finalOutput, session)) {
+        Interface.filtereddata.finalOutput.push(session);
+        Interface.filtereddata.finalOutput.sort((firstItem, secondItem) => firstItem.distance - secondItem.distance);
+    }
 }
 
 Interface.repaint =
