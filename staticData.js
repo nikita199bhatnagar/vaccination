@@ -81,6 +81,7 @@ StaticData.processSessionData =
                     obj.min_age_limit = session.min_age_limit;
                     obj.fee_type = centre.fee_type;
                     obj.vaccine = session.vaccine;
+                    obj.sessionID = session.session_id;
                     StaticData.finalOutput.push(obj);
                 }
             }

@@ -60,7 +60,7 @@ Interface.buttonCSS = function (condition) {
 Interface.filter_condition = {};
 Interface.setFilter = function (condition) {
     console.log("Called: Interface.setFilter");
-    
+
     if (condition == undefined) {
         Interface.filter_condition = {}; //Check Later
         Interface.repaint();
@@ -104,17 +104,23 @@ Interface.paintFiltered =
         $("#viewCenters").html(text);
     };
 
-Interface.InstertFilteredDataSorted = function ( session )
+Interface.InstertFilteredDataSorted = function (session)  //On basis of distance
 {
-    // iterate throgh finalOutput
-    // if the session.distance < current elemnt
-    // insrt here
-    // if the list ends, append at the tail
 
-    // 0 - 78
-    // 1 - 89
-    // 0 -37, 1-78, 2-89
+    // for (var i = 0; session != undefined ; i++) {
+    //     if (Interface.filtereddata.finalOutput[i])
+    //     if (Interface.filtereddata.finalOutput[i].sessionID == session.sessionID) {alert("yo");}
+    //     else {
+    //         Interface.filtereddata.finalOutput.push(session);
+    //         Interface.filtereddata.finalOutput.sort((firstItem, secondItem) => firstItem.distance - secondItem.distance);
+    //     }
+    // }
     Interface.filtereddata.finalOutput.push(session);
+            Interface.filtereddata.finalOutput.sort((firstItem, secondItem) => firstItem.distance - secondItem.distance);
+
+
+
+
 }
 
 Interface.repaint =
