@@ -90,12 +90,10 @@
   -webkit-appearance: none;
   width: 22vw;
   height: 5px;
-  background: white;
+  background: linear-gradient(to right, white 60%, white 40%);
   border-radius: 5px;
-  
+
 }
-
-
 
 .range input::-webkit-slider-thumb{
   -webkit-appearance: none;

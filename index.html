@@ -41,7 +41,7 @@
               </div>
               <div class="field">
                 <div class="value left">10 KM</div>
-                <input type="range" min="10" max="200" value="10" steps="1"
+                <input type="range" min="10" max="200" value="10" steps="1" id="sliderBar"
                   onchange="StaticData.getCentersByPincode(value)" />
 
                 <div class="value right">200 KM</div>
@@ -109,8 +109,10 @@
 
     inputSlider.addEventListener("input", function () {
       var x = inputSlider.value;
-      var color = 'linear-gradient(90deg, #5f367e' + x + '%, white' + (100 - x) + '%)';
-      $(".range input").css("background", color);
+      x = x/2;
+      color = 'linear-gradient(to right, #5f367e ' + x + '%, white ' + x + '%)';
+      // color = "linear-gradient(90deg, pink 50%, cyan 50%)";
+      $("#sliderBar").css("background", color);
     })
 
   </script>

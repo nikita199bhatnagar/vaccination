@@ -16,7 +16,7 @@ function initGeolocation() {
 function success(position) {
    myLocation.long = position.coords.longitude;
    myLocation.lat = position.coords.latitude;
-   StaticData.getCentersByPincode(50);
+   StaticData.getCentersByPincode(10);
 }
 
 function fail() {
