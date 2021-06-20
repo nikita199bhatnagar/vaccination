@@ -4,30 +4,22 @@ Interface.template =
           <thead>
             <tr>
               <th>Date</th>
-              <th>Name</th>
-              <th>Pincode</th>
-              <th>District</th>
               <th>Address</th>
-              <th>Availability</th>
               <th>Age</th>
+              <th>Availability</th>
               <th>Fee</th>
               <th>Vaccine</th>
-              <th>Distance</th>
             </tr>
           </thead>
             <tbody id="geeks">
             {{#finalOutput}}
                 <tr>
                     <td id="date">{{ date }}</td>
-                    <td id="name">{{ name }}</td>
-                    <td>{{ pincode }}</td>
-                    <td>{{ district }}</td>
-                    <td id="address">{{ address }}</td>
-                    <td>{{ available_capacity }}</td>
+                    <td id="address">{{ name }}<br>{{ address }}<br>{{ pincode }}<br>{{ distance }} Km </td>
                     <td>{{ min_age_limit }}</td>
+                    <td>{{ available_capacity }}</td>
                     <td>{{ fee_type }}</td>
                     <td>{{ vaccine }}</td>
-                    <td>{{ distance }}</td>
                 </tr>
             {{/finalOutput}}  
             </tbody>
@@ -74,12 +66,15 @@ Interface.setFilter = function (condition) {
         Interface.repaint();
         return;
     }
+
     if (condition.min_age_limit !== undefined) {
         Interface.filter_condition.min_age_limit = condition.min_age_limit;
     }
+
     if (condition.vaccine !== undefined) {
         Interface.filter_condition.vaccine = condition.vaccine;
     }
+
     Interface.buttonCSS(condition);  //------------------------------------------------------------------------------------------------------------
     Interface.paintFiltered(Interface.filter_condition);
 }
@@ -103,11 +98,24 @@ Interface.paintFiltered =
                 }
             }
             if (toselect == true)
-                Interface.filtereddata.finalOutput.push(session);
+                Interface.InstertFilteredDataSorted(session);
         }
         var text = Mustache.render(Interface.template, Interface.filtereddata);
         $("#viewCenters").html(text);
     };
+
+Interface.InstertFilteredDataSorted = function ( session )
+{
+    // iterate throgh finalOutput
+    // if the session.distance < current elemnt
+    // insrt here
+    // if the list ends, append at the tail
+
+    // 0 - 78
+    // 1 - 89
+    // 0 -37, 1-78, 2-89
+    Interface.filtereddata.finalOutput.push(session);
+}
 
 Interface.repaint =
     function () {

@@ -1,6 +1,10 @@
 .all_buttons{
     margin-top: 2%;
+    margin-bottom: 1%;
+    justify-content: center;
+    display: grid;
 }
+
 
 .btn_parent{
     margin: 0;
@@ -12,7 +16,7 @@
 .btn-group{
     text-align: center;
     width: auto;
-    border-radius: 25px;
+    border-radius: 0 0 25px 25px;
     background-color:#bd77f2;
 }
 
@@ -25,3 +29,4 @@
     /* float: left;  */
     border-radius: 25px;
 }
+

@@ -1,7 +1,113 @@
-.slidecontainer{
+/* .slidecontainer{
   text-align: center;
 }
 
 #myRange{
   width: 30vw;
+} */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} */
+
+/* html,body{
+  display: grid;
+  height: 100%;
+  text-align: center;
+  place-items: center;
+  background: #664AFF;
+} */
+
+.range{
+  height: 5vh;
+  width: auto;
+  background: #bd77f2;
+  border-radius: 25px 25px 0 0;
+  /* padding: 0 65px 0 45px; */
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+  display: grid;
+  text-align: center;
+  place-items: center;
+}
+
+.sliderValue{
+  position: relative;
+  width: 22vw;
+}
+
+.sliderValue span{
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  transform: translateX(-70%) scale(0);
+  font-weight: 500;
+  top: -40px;
+  line-height: 55px;
+  z-index: 2;
+  color: white;
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sliderValue span.show{
+  transform: translateX(-70%) scale(1);
+}
+
+.sliderValue span:after{
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: #5f367e;
+  border: 3px solid white;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-bottom-left-radius: 50%;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.field{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.field .value{
+  width: 5vw;
+}
+ 
+
+.range input{
+  -webkit-appearance: none;
+  width: 22vw;
+  height: 5px;
+  background: white;
+  border-radius: 5px;
+  
+}
+
+
+
+.range input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #5f367e;
+  border: 1px solid #5f367e;
+  cursor: pointer;
+}
+
+.range input::-moz-range-progress{
+  background: #5f367e; 
+  /* this progress background is only shown on Firefox */
 }

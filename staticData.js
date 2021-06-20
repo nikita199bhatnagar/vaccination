@@ -85,5 +85,7 @@ StaticData.processSessionData =
                 }
             }
         }
-        Interface.repaint();
+        // Interface.repaint();
+        Interface.paintFiltered(Interface.filter_condition);
+
     };

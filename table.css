@@ -1,40 +1,30 @@
 #date{
-    width: 10%;
+    white-space: nowrap;
 }
 
 #address{
     text-align: left;
 }
-
-#name{
-    text-align: left;
-}
-
-section{
-    position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-    bottom: 15%;
-}  /*Table resides in section tag*/
   
 table {
-	width: 1400px;
+    width: 75vw;
 	border-collapse: collapse;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    
 }
 
-.tbl-content{
-    height: 150%;
-    overflow-x:auto;
+.tblContent{
+    height: 60vh;
+    overflow-y:auto;
     margin-top: 0px;
     border: 1px solid rgba(255,255,255,0.3);
     /* opacity: 1; */
 }
 
-th{
+
+  .tblContent thead th{
+    position: sticky;
+    top: 0;
     padding: 22px 15px;
     text-align: center;
     font-weight: 500;
@@ -42,14 +32,12 @@ th{
     color: #fff;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #bd77f281;
-    position: sticky;
-    top:0%;
+    background-color: #5f367e;
 }
 
 
 td{
-    padding: 20px;
+    padding:1rem;
     text-align: center;
     vertical-align:middle;
     font-weight: 300;
