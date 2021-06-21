@@ -14,11 +14,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaccine Availability Checker</title>
   <link rel="shortcut icon" href="screenshot/logo2.png" type="image/x-icon" />
-  <style>
-    .col-md-10 {
-      display: contents;
-    }
-  </style>
 </head>
 
 <body>
@@ -28,7 +23,6 @@
   </header>
   <div class="row d-flex justify-content-center">
     <div class="container my-container">
-      <!-- <div class="contain"> -->
 
       <div class="row my-row">
         <div class="col-md-12 col-sm-12 my-col">
@@ -67,11 +61,12 @@
           </div>
         </div>
       </div>
-      <div class="row my-row" style= "height: 60vh;">
+      <div class="row my-row" style="height: 60vh;">
         <div class="col-md-10 col-sm-10 my-col">
-          <!-- <div id="section"> -->
-            <div class="tblContent" id="viewCenters"></div>
-          <!-- </div> -->
+
+          <div class="tblContent" id="viewCenters"></div>
+          <div class="tblContent" id="viewCentersInMobile">Hello</div>
+
         </div>
       </div>
 
@@ -109,7 +104,7 @@
 
     inputSlider.addEventListener("input", function () {
       var x = inputSlider.value;
-      x = x/2;
+      x = x / 2;
       color = 'linear-gradient(to right, #5f367e ' + x + '%, white ' + x + '%)';
       // color = "linear-gradient(90deg, pink 50%, cyan 50%)";
       $("#sliderBar").css("background", color);

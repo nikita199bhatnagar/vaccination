@@ -30,7 +30,20 @@ Colours need to change to a lighter background and mellow colours as well else o
 Overall it's a simple design and if you are going against information display as a primary output this does the job
 But you need to roll it out quickly and publish it on LinkedIn
 
-Sticky Header
+
+
+Mobile responsive               []
+api call faster                 []
+Sticky Header                   [DONE]
+about us                        [] 
 Remove button select
-Mobile responsive
-about us 
+print "not available when data not present"
+
+  Theme Changer
+  Improve UI
+  User Demographic Data load
+  Admin page to load stats.
+  Link to cowin page
+  covid stats data display
+  Articles and FAQs 
+

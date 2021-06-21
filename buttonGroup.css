@@ -1,8 +1,12 @@
 .all_buttons{
-    margin-top: 2%;
+    margin-top: 0.5%;
     margin-bottom: 1%;
     justify-content: center;
     display: grid;
+    font-weight: 500;
+    border-radius:20px;
+    background-color:#bd77f2; 
+    margin:0 25% 1% 25%; 
 }
 
 
@@ -15,18 +19,39 @@
 
 .btn-group{
     text-align: center;
-    width: auto;
-    border-radius: 0 0 25px 25px;
-    background-color:#bd77f2;
+    width: 100%;
+
+        justify-content: center;
+      
+    
+  
 }
 
 .btn-group button{
     background-color:#bd77f2; 
     border: 1px #bd77f2;
     color: white; 
-    padding: 10px 24px;
+    padding: 1.5% 3.886%;
     cursor: pointer;
     /* float: left;  */
     border-radius: 25px;
+    font-weight: 500;
 }
 
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 600px) {
+
+    .btn-group button{
+        padding: 1% 2.339%;
+    }
+
+    .all_buttons{
+        background-color:#bd77f2; 
+        margin: 5% 1% 8% 1%;
+        border-radius:20px;
+    }
+
+    
+}

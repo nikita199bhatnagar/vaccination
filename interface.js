@@ -3,8 +3,8 @@ Interface.template =
     `<table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Address</th>
+              <th id="dateHead">Date</th>
+              <th id="addressHead">Address</th>
               <th>Age</th>
               <th>Availability</th>
               <th>Fee</th>
@@ -14,8 +14,8 @@ Interface.template =
             <tbody id="geeks">
             {{#finalOutput}}
                 <tr>
-                    <td id="date">{{ date }}</td>
-                    <td id="address">{{ name }}<br>{{ address }}<br>{{ pincode }}<br>{{ distance }} Km </td>
+                    <td id="dateBody">{{ date }}</td>
+                    <td id="addressBody">{{ name }}<br>{{ address }}<br>{{ pincode }}<br>{{ distance }} Km </td>
                     <td>{{ min_age_limit }}</td>
                     <td>{{ available_capacity }}</td>
                     <td>{{ fee_type }}</td>
@@ -24,6 +24,23 @@ Interface.template =
             {{/finalOutput}}  
             </tbody>
         </table>`;
+
+Interface.templateMobile =
+    `<table>
+              <thead>
+                <tr>
+                
+                  <th>SLOTS</th>
+                </tr>
+              </thead>
+                <tbody id="geeks">
+                {{#finalOutput}}
+                    <tr>
+                        <td>{{ min_age_limit }}+, {{ name }}, {{ address }}, {{ pincode }}<br>{{ distance }} Km </td>
+                    </tr>
+                {{/finalOutput}}  
+                </tbody>
+            </table>`;
 
 Interface.buttonCSS = function (condition) {
 
@@ -102,6 +119,8 @@ Interface.paintFiltered =
         }
         var text = Mustache.render(Interface.template, Interface.filtereddata);
         $("#viewCenters").html(text);
+        var textForMobile = Mustache.render(Interface.templateMobile, Interface.filtereddata);
+        $("#viewCentersInMobile").html(textForMobile);
     };
 
 function checkWhetherToPush(arr, val) {
