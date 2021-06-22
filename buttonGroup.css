@@ -1,0 +1,57 @@
+.all_buttons{
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    justify-content: center;
+    display: grid;
+    font-weight: 500;
+    border-radius:20px;
+    background-color:#bd77f2; 
+    margin:0 25% 1% 25%; 
+}
+
+
+.btn_parent{
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.btn-group{
+    text-align: center;
+    width: 100%;
+
+        justify-content: center;
+      
+    
+  
+}
+
+.btn-group button{
+    background-color:#bd77f2; 
+    border: 1px #bd77f2;
+    color: white; 
+    padding: 1.5% 3.886%;
+    cursor: pointer;
+    /* float: left;  */
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 600px) {
+
+    .btn-group button{
+        padding: 1% 2.339%;
+    }
+
+    .all_buttons{
+        background-color:#bd77f2; 
+        margin: 5% 1% 8% 1%;
+        border-radius:20px;
+    }
+
+    
+}

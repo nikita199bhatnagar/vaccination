@@ -1,0 +1,49 @@
+Unknowns
+How do I find my latitude and longitude
+How do I get vaccination centre data
+How do I calculate the distance
+How do I show the information to the client
+
+Tasks List
+1. Show my current loctaion a webpage 
+2. Calculate distance from a particular location
+
+
+
+We need to show the pincode and also include the distance in the report 
+So that we can sort on the distance 
+Also district name will be good as a column 
+Ideally having a drop down to select the district
+
+
+
+
+  <!-- <div id="nearby-covid-places-mapmyindia">
+    <script type="text/javascript">
+        loadNearbyCovidCentresMapmyIndiaDiv(document.getElementById("nearby-covid-places-mapmyindia"));
+    </script>
+    </div> -->
+
+
+It's not mobile compatible that's the one issue I see
+Colours need to change to a lighter background and mellow colours as well else older people won't be able to see clearly
+Overall it's a simple design and if you are going against information display as a primary output this does the job
+But you need to roll it out quickly and publish it on LinkedIn
+
+
+
+Mobile responsive               []
+api call faster                 []
+Sticky Header                   [DONE]
+about us                        [] 
+Remove button select
+print "not available when data not present"
+
+  Theme Changer
+  Improve UI
+  User Demographic Data load
+  Admin page to load stats.
+  Link to cowin page
+  covid stats data display
+  Articles and FAQs 
+
