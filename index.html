@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="table.css" />
+  <link rel="stylesheet" href="container.css" />
+  <link rel="stylesheet" href="buttonGroup.css" />
+  <link rel="stylesheet" href="slider.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaccine Availability Checker</title>
+  <link rel="shortcut icon" href="screenshot/logo2.png" type="image/x-icon" />
+</head>
+
+<body>
+  <header id="title">
+    <img id="logo" onClick="location.reload()" src="screenshot/SakhiLogoSquareTransparent.png" />
+    <div class="head_text">Vaccine Availability Checker</div>
+  </header>
+  <div class="row d-flex justify-content-center">
+    <div class="container my-container">
+
+      <div class="row my-row">
+        <div class="col-md-12 col-sm-12 my-col">
+
+          <div class="all_buttons">
+
+            <div class="range">
+              <div class="sliderValue">
+                <span>100</span>
+              </div>
+              <div class="field">
+                <div class="value left">10 KM</div>
+                <input type="range" min="10" max="200" value="10" steps="1" id="sliderBar"
+                  onchange="StaticData.getCentersByPincode(value)" />
+
+                <div class="value right">200 KM</div>
+              </div>
+            </div>
+            <div class="btn_parent">
+              <div class="btn-group">
+                <button id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
+                <button id="age45" value="45" onclick="Interface.setFilter({'min_age_limit':45})">45+</button>
+                <button id="vaccineSH" value="Covisheild"
+                  onclick="Interface.setFilter({'vaccine':'COVISHIELD'})">Covisheild</button>
+                <button id="vaccineXI" value="Covaxin" onclick="Interface.setFilter({'vaccine':'COVAXIN'})">
+                  Covaxin
+                </button>
+                <button id="vaccineSP" value="Sputnik" onclick="Interface.setFilter({'vaccine':'SPUTNIK'})">
+                  Sputnik
+                </button>
+                <button id="all" value="All" onclick="Interface.setFilter()">
+                  All
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-row" style="height: 60vh;">
+        <div class="col-md-10 col-sm-10 my-col">
+
+          <div class="tblContent" id="viewCenters"></div>
+          <div class="tblContent" id="viewCentersInMobile">Hello</div>
+
+        </div>
+      </div>
+
+      <!-- <div class="row my-row">
+        <div class="col-md-12 col-sm-12 my-col">
+          About US
+          - name / linkedin / picture
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+
+  <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
+    integrity="sha512-3GRj7sme01zpWwRNPNy48Rda1bD9cq34lqYG5vb8ZXGc+wRqsoBJ3+AC25IYW5w5SrWlzHqIpNIxZt5QF9sXLg=="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="interface.js"></script>
+  <script src="staticData.js"></script>
+  <script src="functions.js"></script>
+  <script>
+    const slideValue = document.querySelector("span");
+    const inputSlider = document.querySelector("input");
+    inputSlider.oninput = (() => {
+      let value = inputSlider.value;
+      slideValue.textContent = value;
+      slideValue.style.left = (value / 2) + "%";
+      slideValue.classList.add("show");
+    });
+    inputSlider.onblur = (() => {
+      slideValue.classList.remove("show");
+    });
+
+    inputSlider.addEventListener("input", function () {
+      var x = inputSlider.value;
+      x = x / 2;
+      color = 'linear-gradient(to right, #5f367e ' + x + '%, white ' + x + '%)';
+      // color = "linear-gradient(90deg, pink 50%, cyan 50%)";
+      $("#sliderBar").css("background", color);
+    })
+
+  </script>
+</body>
+
+</html>
