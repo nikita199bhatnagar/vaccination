@@ -36,7 +36,7 @@ Interface.templateMobile =
                 <tbody id="geeks">
                 {{#finalOutput}}
                     <tr>
-                        <td>{{ min_age_limit }}+, {{ name }}, {{ address }}, {{ pincode }}<br>{{ distance }} Km </td>
+                        <td>Age: {{ min_age_limit }}+, {{ fee_type }}, Available: {{ available_capacity }}, {{ vaccine }},  Distance: {{ distance }} Km  <br> {{ name }}, {{ address }}, {{ pincode }}<br>{{ date }}</td>
                     </tr>
                 {{/finalOutput}}  
                 </tbody>
