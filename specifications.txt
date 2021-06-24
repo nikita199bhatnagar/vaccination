@@ -38,6 +38,8 @@ Sticky Header                   [DONE]
 about us                        [] 
 Remove button select
 print "not available when data not present"
+Drop down list for vaccine and payment
+
 
   Theme Changer
   Improve UI
@@ -47,3 +49,14 @@ print "not available when data not present"
   covid stats data display
   Articles and FAQs 
 
+Work:-
+    About Us
+    Location bar
+    Home page UI improve (Ideas)
+    Robust css 
+    Collapsable Colomn
+    Theme changer
+    Dose 1 & 2 display
+    
+Slots
+[]

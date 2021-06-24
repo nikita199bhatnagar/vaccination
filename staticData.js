@@ -18,15 +18,16 @@ StaticData.onCentreDataRecieved = function (data, dis) {
     StaticData.processSessionData(data.centers, dis);
 }
 
-StaticData.loadCentersByPincode = function (value, index, array) {
+StaticData.centerCount = 0;
+StaticData.loadCentersByPincode = function (value) {
     if (value.distance <= StaticData.range) {
-        // console.log(value);
         StaticData.requestCount++;
         $.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + value.Pincode + "&date=" + date,
             function (json) {
                 StaticData.onCentreDataRecieved(json, value.distance);
             });
     }
+
 };
 
 
@@ -65,7 +66,7 @@ StaticData.processSessionData =
         for (var centre_no = 0; centre_no < data.length; centre_no++) {
             // iterate through centre
             var centre = data[centre_no];
-            var address = centre.address +", "+ centre.district_name +", "+  centre.state_name;
+            var address = centre.address + ", " + centre.district_name + ", " + centre.state_name;
             // console.log(address);
             for (var session_no = 0; session_no < centre.sessions.length; session_no++) {
                 var obj = {};
@@ -78,6 +79,8 @@ StaticData.processSessionData =
                     obj.district = centre.district_name;
                     obj.address = address;
                     obj.available_capacity = session.available_capacity;
+                    obj.available_capacity_dose1 = session.available_capacity_dose1;
+                    obj.available_capacity_dose2 = session.available_capacity_dose2;
                     obj.min_age_limit = session.min_age_limit;
                     obj.fee_type = centre.fee_type;
                     obj.vaccine = session.vaccine;
@@ -86,7 +89,6 @@ StaticData.processSessionData =
                 }
             }
         }
-        // Interface.repaint();
         Interface.paintFiltered(Interface.filter_condition);
 
     };

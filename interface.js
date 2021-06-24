@@ -17,7 +17,7 @@ Interface.template =
                     <td id="dateBody">{{ date }}</td>
                     <td id="addressBody">{{ name }}<br>{{ address }}<br>{{ pincode }}<br>{{ distance }} Km </td>
                     <td>{{ min_age_limit }}</td>
-                    <td>{{ available_capacity }}</td>
+                    <td>Dose 1: {{ available_capacity_dose1 }}<br>Dose 2: {{ available_capacity_dose2 }}</td>
                     <td>{{ fee_type }}</td>
                     <td>{{ vaccine }}</td>
                 </tr>
@@ -36,7 +36,7 @@ Interface.templateMobile =
                 <tbody id="geeks">
                 {{#finalOutput}}
                     <tr>
-                        <td>Age: {{ min_age_limit }}+, {{ fee_type }}, Available: {{ available_capacity }}, {{ vaccine }},  Distance: {{ distance }} Km  <br> {{ name }}, {{ address }}, {{ pincode }}<br>{{ date }}</td>
+                        <td>Age: {{ min_age_limit }}+, {{ fee_type }}, [Dose 1: {{ available_capacity_dose1 }}/Dose 2: {{ available_capacity_dose2 }}] , {{ vaccine }},  Distance: {{ distance }} Km  <br> {{ name }}, {{ address }}, {{ pincode }}<br>{{ date }}</td>
                     </tr>
                 {{/finalOutput}}  
                 </tbody>
