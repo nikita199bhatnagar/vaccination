@@ -55,11 +55,21 @@
   position: relative;
 }
 
-.field .value{
-  width: 5vw;
+.field{
   color: white;
 }
  
+.field .value_left{
+  margin: 0 2%;
+  color: white;
+  white-space: nowrap;
+}
+
+.field .value_right{
+  margin: 0 2%;
+  color: white;
+  white-space: nowrap;
+}
 
 .range input{
   -webkit-appearance: none;
@@ -72,8 +82,8 @@
 
 .range input::-webkit-slider-thumb{
   -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background: #5f367e;
   border: 1px solid #5f367e;
@@ -86,14 +96,13 @@
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1258px) {
 
   .range input {
     width: 60vw;
 }
 
 .field .value{
-  width: 19vw;
   color: white;
 }
 

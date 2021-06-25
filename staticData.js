@@ -41,15 +41,12 @@ StaticData.updateDistances = function (data) {
         pin.distance = distance(myLocation.lat, myLocation.long, lat, long, "K");
         StaticData.allPinCodes.push(pin);
     }
-    // console.log("loaded pin codes");
     StaticData.availableVaccinations = [];
     StaticData.allPinCodes.forEach(StaticData.loadCentersByPincode);
 };
 
 
 StaticData.getCentersByPincode = function (range) {
-    // update distances
-    // console.log(range);
     StaticData.requestCount = 0;
     StaticData.finalOutput = [];
     StaticData.range = range;
@@ -64,10 +61,8 @@ StaticData.processSessionData =
     function (data, dis) {
         console.log("Called: StaticData.processSessionData");
         for (var centre_no = 0; centre_no < data.length; centre_no++) {
-            // iterate through centre
             var centre = data[centre_no];
             var address = centre.address + ", " + centre.district_name + ", " + centre.state_name;
-            // console.log(address);
             for (var session_no = 0; session_no < centre.sessions.length; session_no++) {
                 var obj = {};
                 var session = centre.sessions[session_no];

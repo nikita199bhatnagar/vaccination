@@ -9,6 +9,18 @@
     margin:0 25% 1% 25%; 
 }
 
+.dd{
+    padding: 2%;
+    margin: 0 1% 1% 1%;
+    border-radius: 2rem;
+    font-weight: 500;
+    color: white;    
+    background-color:#bd77f2; 
+    border-color: #bd77f2;
+    /* -moz-appearance: none; */
+    /* -webkit-appearance: none; */
+    /* border: none; */
+}
 
 .btn_parent{
     margin: 0;
@@ -20,28 +32,33 @@
 .btn-group{
     text-align: center;
     width: 100%;
-
-        justify-content: center;
-      
-    
-  
+    justify-content: center;
 }
 
 .btn-group button{
+    padding: 1% 4%;
+    margin: 0 1% 1% 1%;
+    border-radius: 2rem;
+    font-weight: 500;
+    color: white;
+    background-color:#bd77f2; 
+    border-color: #bd77f2;
+}
+
+/* .btn-group button{
     background-color:#bd77f2; 
     border: 1px #bd77f2;
     color: white; 
     padding: 1.5% 3.886%;
     cursor: pointer;
-    /* float: left;  */
     border-radius: 25px;
     font-weight: 500;
-}
+} */
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1258px) {
 
     .btn-group button{
         padding: 1% 2.339%;

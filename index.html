@@ -13,7 +13,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaccine Availability Checker</title>
-  <link rel="shortcut icon" href="screenshot/logo2.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="screenshot/SakhiLogoSquareTransparent.png" type="image/x-icon" />
+  <!-- <style>
+    .my-container {
+        border: 1px solid green;
+    }
+
+    .my-row {
+        border: 3px solid red;
+        width:inherit;
+    }
+
+    .my-col {
+        border: 3px dotted blue;
+    }
+</style> -->
 </head>
 
 <body>
@@ -34,16 +48,16 @@
                 <span>100</span>
               </div>
               <div class="field">
-                <div class="value left">10 KM</div>
+                <div class="value_left">10 KM</div>
                 <input type="range" min="10" max="200" value="10" steps="1" id="sliderBar"
                   onchange="StaticData.getCentersByPincode(value)" />
 
-                <div class="value right">200 KM</div>
+                <div class="value_right">100 KM</div>
               </div>
             </div>
             <div class="btn_parent">
               <div class="btn-group">
-                <button id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
+                <!-- <button id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
                 <button id="age45" value="45" onclick="Interface.setFilter({'min_age_limit':45})">45+</button>
                 <button id="vaccineSH" value="Covisheild"
                   onclick="Interface.setFilter({'vaccine':'COVISHIELD'})">Covisheild</button>
@@ -55,27 +69,41 @@
                 </button>
                 <button id="all" value="All" onclick="Interface.setFilter()">
                   All
+                </button> -->
+
+                <select onselect="Interface.setFilter({'min_age_limit':value})" class="dd" name="age">
+                  <option id="age" value="Age" hidden selected>Age</option>
+                  <option value="18">18+</option>
+                  <option value="45">45+</option>
+                </select>
+                <select onselect="Interface.setFilter({'vaccine':value})" class="dd" name="vaccine">
+                  <option id="vaccine" value="Vaccine" hidden selected>Vaccine</option>
+                  <option value="COVISHIELD">Covisheild</option>
+                  <option value="COVAXIN">Covaxin</option>
+                  <option value="SPUTNIK">Sputnik</option>
+                </select>
+                <select onselect="Interface.setFilter({'fee_type':value})" class="dd" name="fee" id="fee">
+                  <option id="fee" value="Fee" hidden selected>Fee Type</option>
+                  <option value="Free">Free</option>
+                  <option value="Paid">Paid</option>
+                </select>
+                <button id="all" value="All" onclick="Interface.setFilter()">
+                  All
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row my-row" style="height: 60vh;">
-        <div class="col-md-10 col-sm-10 my-col">
+      <div class="row" style="justify-content: center;">
+        <div class=".col-md-3 .col-md-6 .col-md-3">
 
           <div class="tblContent" id="viewCenters"></div>
           <div class="tblContent" id="viewCentersInMobile">Hello</div>
 
         </div>
       </div>
-
-      <!-- <div class="row my-row">
-        <div class="col-md-12 col-sm-12 my-col">
-          About US
-          - name / linkedin / picture
-        </div>
-      </div> -->
+      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13927.579210352733!2d78.96276174999998!3d29.226648649999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1624638799432!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
     </div>
   </div>
 
@@ -95,7 +123,7 @@
     inputSlider.oninput = (() => {
       let value = inputSlider.value;
       slideValue.textContent = value;
-      slideValue.style.left = (value / 2) + "%";
+      slideValue.style.left = (value/2) + "%";
       slideValue.classList.add("show");
     });
     inputSlider.onblur = (() => {
@@ -104,9 +132,9 @@
 
     inputSlider.addEventListener("input", function () {
       var x = inputSlider.value;
-      x = x / 2;
+      x = x/2;
       color = 'linear-gradient(to right, #5f367e ' + x + '%, white ' + x + '%)';
-      // color = "linear-gradient(90deg, pink 50%, cyan 50%)";
+
       $("#sliderBar").css("background", color);
     })
 
