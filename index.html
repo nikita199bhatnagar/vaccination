@@ -33,7 +33,9 @@
 
 <body>
   <header id="title">
-    <img id="logo" onClick="location.reload()" src="screenshot/logo.png" />
+    <!-- <img id="logo" onClick="location.reload()" src="screenshot/logo.png" /> -->
+    <div class="head_text1" onClick="location.reload()">Vaccine Availability Checker</div>
+    <div class="head_text2">Sakhi Learning LLP</div>
   </header>
   <div class="row d-flex justify-content-center">
     <div class="container my-container">
@@ -42,13 +44,13 @@
           <div class="all_buttons">
             <div class="range">
               <div class="sliderValue">
-                <span>100</span>
+                <span>5</span>
               </div>
               <div class="field">
-                <div class="value_left">10 KM</div>
-                <input type="range" min="10" max="200" value="10" steps="1" id="sliderBar"
+                <div class="value_left">5 KM</div>
+                <input type="range" min="5" max="50" value="5" id="sliderBar"
                   onchange="StaticData.getCentersByPincode(value)" />
-                <div class="value_right">100 KM</div>
+                <div class="value_right">50 KM</div>
               </div>
             </div>
             <div class="btn_parent">
@@ -108,7 +110,7 @@
     inputSlider.oninput = (() => {
       let value = inputSlider.value;
       slideValue.textContent = value;
-      slideValue.style.left = (value / 2) + "%";
+      slideValue.style.left = (value * 2) + "%";
       slideValue.classList.add("show");
     });
     inputSlider.onblur = (() => {
@@ -117,8 +119,8 @@
 
     inputSlider.addEventListener("input", function () {
       var x = inputSlider.value;
-      x = x / 2;
-      color = 'linear-gradient(to right, #5f367e ' + x + '%, white ' + x + '%)';
+      x = x * 2;
+      color = 'linear-gradient(to right, #5f367e ' + (x-5) + '%, white ' + (x-5) + '%)';
 
       $("#sliderBar").css("background", color);
     })

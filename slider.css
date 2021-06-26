@@ -26,6 +26,7 @@
   color: white;
   transform-origin: bottom;
   transition: transform 0.3s ease-in-out;
+  padding-right: 5%;
 }
 
 .sliderValue span.show{
@@ -40,11 +41,12 @@
   background: #5f367e;
   border: 2px solid white;
   z-index: -1;
-  left: 50%;
+  left: 30%;
   transform: translateX(-50%) rotate(45deg);
   border-bottom-left-radius: 50%;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
+  padding-right: 5%;
 }
 
 .field{
@@ -109,6 +111,10 @@
 .sliderValue{
   position: relative;
   width: 54vw;
+}
+
+.sliderValue span{
+  padding-right:  8%;
 }
 
 }
