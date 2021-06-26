@@ -56,14 +56,17 @@ Interface.setFilter = function (condition) {
 
     if (condition.min_age_limit !== undefined) {
         Interface.filter_condition.min_age_limit = condition.min_age_limit;
+        $("#ageSelect").css("background-color","#5f367e");
     }
 
     if (condition.vaccine !== undefined) {
         Interface.filter_condition.vaccine = condition.vaccine;
+        $("#vaccineSelect").css("background-color","#5f367e");
     }
 
     if (condition.fee_type !== undefined) {
         Interface.filter_condition.fee_type = condition.fee_type;
+        $("#feeSelect").css("background-color","#5f367e");
     }
 
     Interface.paintFiltered(Interface.filter_condition);
@@ -113,7 +116,7 @@ Interface.InstertFilteredDataSorted = function (session)  //On basis of distance
 Interface.repaint =
     function () {
         Interface.filter_condition = {};
-        console.log("Called: Interface.repaint");
+        $(".dd").css("background-color","#bd77f2");
         var text = Mustache.render(Interface.template, StaticData);
         $("#viewCenters").html(text);
         var textForMobile = Mustache.render(Interface.templateMobile, Interface.filtereddata); //check for error

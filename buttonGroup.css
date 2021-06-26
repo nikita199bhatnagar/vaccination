@@ -20,7 +20,16 @@
     /* -moz-appearance: none; */
     /* -webkit-appearance: none; */
     /* border: none; */
+    cursor: pointer;
+    transition-duration: 0.4s;
+    outline: 0;
 }
+  
+.dd:hover {
+    background-color: #5f367e;
+    color: white;
+}
+
 
 .btn_parent{
     margin: 0;
@@ -43,8 +52,17 @@
     color: white;
     background-color:#bd77f2; 
     border-color: #bd77f2;
-    box-shadow: none;
+    cursor: pointer;
+    outline: 0;
 }
+
+.btn-group button:hover {
+    transition-duration: 0.4s;
+    background-color: #5f367e; 
+    color: white;
+}
+
+
 
 /* .btn-group button{
     background-color:#bd77f2; 

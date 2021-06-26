@@ -54,23 +54,24 @@
             <div class="btn_parent">
               <div class="btn-group">
 
-                <select onchange="Interface.setFilter({'min_age_limit':value})" class="dd" name="age">
+
+                <select onchange="Interface.setFilter({'min_age_limit':value})" class="dd" name="age" id="ageSelect">
                   <option id="age" value="Age" hidden selected>Age</option>
                   <option value="18">18+</option>
                   <option value="45">45+</option>
                 </select>
-                <select onchange="Interface.setFilter({'vaccine':value})" class="dd" name="vaccine">
+                <select onchange="Interface.setFilter({'vaccine':value})" class="dd" name="vaccine" id="vaccineSelect">
                   <option id="vaccine" value="Vaccine" hidden selected>Vaccine</option>
                   <option value="COVISHIELD">Covisheild</option>
                   <option value="COVAXIN">Covaxin</option>
                   <option value="SPUTNIK">Sputnik</option>
                 </select>
-                <select onchange="Interface.setFilter({'fee_type':value})" class="dd" name="fee" id="fee">
+                <select onchange="Interface.setFilter({'fee_type':value})" class="dd" name="fee" id="feeSelect">
                   <option id="fee" value="Fee" hidden selected>Fee Type</option>
                   <option value="Free">Free</option>
                   <option value="Paid">Paid</option>
                 </select>
-                <button id="all" value="All" onclick="Interface.setFilter()">
+                <button type="button" id="all" value="All" onclick="Interface.setFilter()">
                   All
                 </button>
               </div>
