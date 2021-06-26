@@ -13,7 +13,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaccine Availability Checker</title>
-  <link rel="shortcut icon" href="screenshot/SakhiLogoSquareTransparent.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="screenshot/Capture.PNG" type="image/x-icon" />
+
   <!-- <style>
     .my-container {
         border: 1px solid green;
@@ -32,17 +33,13 @@
 
 <body>
   <header id="title">
-    <img id="logo" onClick="location.reload()" src="screenshot/SakhiLogoSquareTransparent.png" />
-    <div class="head_text">Vaccine Availability Checker</div>
+    <img id="logo" onClick="location.reload()" src="screenshot/logo.png" />
   </header>
   <div class="row d-flex justify-content-center">
     <div class="container my-container">
-
       <div class="row my-row">
         <div class="col-md-12 col-sm-12 my-col">
-
           <div class="all_buttons">
-
             <div class="range">
               <div class="sliderValue">
                 <span>100</span>
@@ -51,38 +48,24 @@
                 <div class="value_left">10 KM</div>
                 <input type="range" min="10" max="200" value="10" steps="1" id="sliderBar"
                   onchange="StaticData.getCentersByPincode(value)" />
-
                 <div class="value_right">100 KM</div>
               </div>
             </div>
             <div class="btn_parent">
               <div class="btn-group">
-                <!-- <button id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
-                <button id="age45" value="45" onclick="Interface.setFilter({'min_age_limit':45})">45+</button>
-                <button id="vaccineSH" value="Covisheild"
-                  onclick="Interface.setFilter({'vaccine':'COVISHIELD'})">Covisheild</button>
-                <button id="vaccineXI" value="Covaxin" onclick="Interface.setFilter({'vaccine':'COVAXIN'})">
-                  Covaxin
-                </button>
-                <button id="vaccineSP" value="Sputnik" onclick="Interface.setFilter({'vaccine':'SPUTNIK'})">
-                  Sputnik
-                </button>
-                <button id="all" value="All" onclick="Interface.setFilter()">
-                  All
-                </button> -->
 
-                <select onselect="Interface.setFilter({'min_age_limit':value})" class="dd" name="age">
+                <select onchange="Interface.setFilter({'min_age_limit':value})" class="dd" name="age">
                   <option id="age" value="Age" hidden selected>Age</option>
                   <option value="18">18+</option>
                   <option value="45">45+</option>
                 </select>
-                <select onselect="Interface.setFilter({'vaccine':value})" class="dd" name="vaccine">
+                <select onchange="Interface.setFilter({'vaccine':value})" class="dd" name="vaccine">
                   <option id="vaccine" value="Vaccine" hidden selected>Vaccine</option>
                   <option value="COVISHIELD">Covisheild</option>
                   <option value="COVAXIN">Covaxin</option>
                   <option value="SPUTNIK">Sputnik</option>
                 </select>
-                <select onselect="Interface.setFilter({'fee_type':value})" class="dd" name="fee" id="fee">
+                <select onchange="Interface.setFilter({'fee_type':value})" class="dd" name="fee" id="fee">
                   <option id="fee" value="Fee" hidden selected>Fee Type</option>
                   <option value="Free">Free</option>
                   <option value="Paid">Paid</option>
@@ -106,7 +89,8 @@
       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13927.579210352733!2d78.96276174999998!3d29.226648649999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1624638799432!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
     </div>
   </div>
-
+  
+  
 
   <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
@@ -123,7 +107,7 @@
     inputSlider.oninput = (() => {
       let value = inputSlider.value;
       slideValue.textContent = value;
-      slideValue.style.left = (value/2) + "%";
+      slideValue.style.left = (value / 2) + "%";
       slideValue.classList.add("show");
     });
     inputSlider.onblur = (() => {
@@ -132,7 +116,7 @@
 
     inputSlider.addEventListener("input", function () {
       var x = inputSlider.value;
-      x = x/2;
+      x = x / 2;
       color = 'linear-gradient(to right, #5f367e ' + x + '%, white ' + x + '%)';
 
       $("#sliderBar").css("background", color);

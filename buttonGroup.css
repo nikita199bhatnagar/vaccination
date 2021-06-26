@@ -43,6 +43,7 @@
     color: white;
     background-color:#bd77f2; 
     border-color: #bd77f2;
+    box-shadow: none;
 }
 
 /* .btn-group button{

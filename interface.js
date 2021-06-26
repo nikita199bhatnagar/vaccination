@@ -49,7 +49,6 @@ Interface.setFilter = function (condition) {
     console.log("Called: Interface.setFilter");
 
     if (condition == undefined) {
-        $("#age").css("display","block");
         Interface.filter_condition = {}; //Check Later
         Interface.repaint();
         return;
@@ -61,6 +60,10 @@ Interface.setFilter = function (condition) {
 
     if (condition.vaccine !== undefined) {
         Interface.filter_condition.vaccine = condition.vaccine;
+    }
+
+    if (condition.fee_type !== undefined) {
+        Interface.filter_condition.fee_type = condition.fee_type;
     }
 
     Interface.paintFiltered(Interface.filter_condition);
