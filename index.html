@@ -13,47 +13,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaccine Availability Checker</title>
-  <link rel="shortcut icon" href="screenshot/logo2.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="screenshot/Capture.PNG" type="image/x-icon" />
+
+  <!-- <style>
+    .my-container {
+        border: 1px solid green;
+    }
+
+    .my-row {
+        border: 3px solid red;
+        width:inherit;
+    }
+
+    .my-col {
+        border: 3px dotted blue;
+    }
+</style> -->
 </head>
 
 <body>
   <header id="title">
-    <img id="logo" onClick="location.reload()" src="screenshot/SakhiLogoSquareTransparent.png" />
-    <div class="head_text">Vaccine Availability Checker</div>
+    <!-- <img id="logo" onClick="location.reload()" src="screenshot/logo.png" /> -->
+    <div class="head_text1" onClick="location.reload()">Vaccine Availability Checker</div>
+    <div class="head_text2">Sakhi Learning LLP</div>
   </header>
   <div class="row d-flex justify-content-center">
     <div class="container my-container">
-
       <div class="row my-row">
         <div class="col-md-12 col-sm-12 my-col">
-
           <div class="all_buttons">
-
             <div class="range">
               <div class="sliderValue">
-                <span>100</span>
+                <span>5</span>
               </div>
               <div class="field">
-                <div class="value left">10 KM</div>
-                <input type="range" min="10" max="200" value="10" steps="1" id="sliderBar"
+                <div class="value_left">5 KM</div>
+                <input type="range" min="5" max="50" value="5" id="sliderBar"
                   onchange="StaticData.getCentersByPincode(value)" />
-
-                <div class="value right">200 KM</div>
+                <div class="value_right">50 KM</div>
               </div>
             </div>
             <div class="btn_parent">
               <div class="btn-group">
-                <button id="age18" value="18" onclick="Interface.setFilter({'min_age_limit':18})">18+</button>
-                <button id="age45" value="45" onclick="Interface.setFilter({'min_age_limit':45})">45+</button>
-                <button id="vaccineSH" value="Covisheild"
-                  onclick="Interface.setFilter({'vaccine':'COVISHIELD'})">Covisheild</button>
-                <button id="vaccineXI" value="Covaxin" onclick="Interface.setFilter({'vaccine':'COVAXIN'})">
-                  Covaxin
-                </button>
-                <button id="vaccineSP" value="Sputnik" onclick="Interface.setFilter({'vaccine':'SPUTNIK'})">
-                  Sputnik
-                </button>
-                <button id="all" value="All" onclick="Interface.setFilter()">
+
+
+                <select onchange="Interface.setFilter({'min_age_limit':value})" class="dd" name="age" id="ageSelect">
+                  <option id="age" value="Age" hidden selected>Age</option>
+                  <option value="18">18+</option>
+                  <option value="45">45+</option>
+                </select>
+                <select onchange="Interface.setFilter({'vaccine':value})" class="dd" name="vaccine" id="vaccineSelect">
+                  <option id="vaccine" value="Vaccine" hidden selected>Vaccine</option>
+                  <option value="COVISHIELD">Covisheild</option>
+                  <option value="COVAXIN">Covaxin</option>
+                  <option value="SPUTNIK">Sputnik</option>
+                </select>
+                <select onchange="Interface.setFilter({'fee_type':value})" class="dd" name="fee" id="feeSelect">
+                  <option id="fee" value="Fee" hidden selected>Fee Type</option>
+                  <option value="Free">Free</option>
+                  <option value="Paid">Paid</option>
+                </select>
+                <button type="button" id="all" value="All" onclick="Interface.setFilter()">
                   All
                 </button>
               </div>
@@ -61,24 +81,19 @@
           </div>
         </div>
       </div>
-      <div class="row my-row" style="height: 60vh;">
-        <div class="col-md-10 col-sm-10 my-col">
+      <div class="row" style="justify-content: center;">
+        <div class=".col-md-3 .col-md-6 .col-md-3">
 
           <div class="tblContent" id="viewCenters"></div>
           <div class="tblContent" id="viewCentersInMobile">Hello</div>
 
         </div>
       </div>
-
-      <!-- <div class="row my-row">
-        <div class="col-md-12 col-sm-12 my-col">
-          About US
-          - name / linkedin / picture
-        </div>
-      </div> -->
+      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13927.579210352733!2d78.96276174999998!3d29.226648649999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1624638799432!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
     </div>
   </div>
-
+  
+  
 
   <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
@@ -95,7 +110,7 @@
     inputSlider.oninput = (() => {
       let value = inputSlider.value;
       slideValue.textContent = value;
-      slideValue.style.left = (value / 2) + "%";
+      slideValue.style.left = (value * 2) + "%";
       slideValue.classList.add("show");
     });
     inputSlider.onblur = (() => {
@@ -104,9 +119,9 @@
 
     inputSlider.addEventListener("input", function () {
       var x = inputSlider.value;
-      x = x / 2;
-      color = 'linear-gradient(to right, #5f367e ' + x + '%, white ' + x + '%)';
-      // color = "linear-gradient(90deg, pink 50%, cyan 50%)";
+      x = x * 2;
+      color = 'linear-gradient(to right, #5f367e ' + (x-5) + '%, white ' + (x-5) + '%)';
+
       $("#sliderBar").css("background", color);
     })
 

@@ -39,9 +39,7 @@ tbody tr{
   width:100%;
   table-layout:fixed;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.575);
-  /* font-size: medium; */
-  
+  background-color: rgba(0, 0, 0, 0.575); 
 }
 
 table ,tr, th {
@@ -75,7 +73,7 @@ table ,tr, th {
 
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1258px) {
 #viewCenters{
   display: none;
 }
