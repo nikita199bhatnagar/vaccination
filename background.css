@@ -1,0 +1,14 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+#vanta-canvas{
+    width: 100%;
+    height: 100vh;
+}
+
+#vanta-canvas-aboutus{
+    width: 100%;
+    height: 100vh;
+}

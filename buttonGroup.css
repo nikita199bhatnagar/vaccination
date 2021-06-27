@@ -30,6 +30,10 @@
     color: white;
 }
 
+.dd::after:hover{
+    background-color: #5f367e;
+    color: white;
+}
 
 .btn_parent{
     margin: 0;
