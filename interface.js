@@ -3,66 +3,46 @@ Interface.template =
     `<table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Name</th>
-              <th>Pincode</th>
-              <th>District</th>
-              <th>Address</th>
-              <th>Availability</th>
+              <th id="dateHead">Date</th>
+              <th id="addressHead">Address</th>
               <th>Age</th>
+              <th>Availability</th>
               <th>Fee</th>
               <th>Vaccine</th>
-              <th>Distance</th>
             </tr>
           </thead>
             <tbody id="geeks">
             {{#finalOutput}}
                 <tr>
-                    <td id="date">{{ date }}</td>
-                    <td id="name">{{ name }}</td>
-                    <td>{{ pincode }}</td>
-                    <td>{{ district }}</td>
-                    <td id="address">{{ address }}</td>
-                    <td>{{ available_capacity }}</td>
+                    <td id="dateBody">{{ date }}</td>
+                    <td id="addressBody">{{ name }}<br>{{ address }}<br>{{ pincode }}<br>{{ distance }} Km </td>
                     <td>{{ min_age_limit }}</td>
+                    <td>Dose 1: {{ available_capacity_dose1 }}<br>Dose 2: {{ available_capacity_dose2 }}</td>
                     <td>{{ fee_type }}</td>
                     <td>{{ vaccine }}</td>
-                    <td>{{ distance }}</td>
                 </tr>
             {{/finalOutput}}  
             </tbody>
         </table>`;
 
-Interface.buttonCSS = function (condition) {
-    if (condition.min_age_limit == 18) {
-        $("#age18").css("background-color", "#5f367e");
-        $("#age45").css("background-color", "#bd77f2");
-        $("#all").css("background-color", "#bd77f2");
-    }
-    else if (condition.min_age_limit == 45) {
-        $("#age18").css("background-color", "#bd77f2");
-        $("#age45").css("background-color", "#5f367e");
-        $("#all").css("background-color", "#bd77f2");
-    }
-    else if (condition.vaccine == 'COVISHIELD') {
-        $("#vaccineSH").css("background-color", "#5f367e");
-        $("#vaccineXI").css("background-color", "#bd77f2");
-        $("#vaccineSP").css("background-color", "#bd77f2");
-        $("#all").css("background-color", "#bd77f2");
-    }
-    else if (condition.vaccine == 'COVAXIN') {
-        $("#vaccineSH").css("background-color", "#bd77f2");
-        $("#vaccineXI").css("background-color", "#5f367e");
-        $("#vaccineSP").css("background-color", "#bd77f2");
-        $("#all").css("background-color", "#bd77f2");
-    }
-    else if (condition.vaccine == 'SPUTNIK') {
-        $("#vaccineSH").css("background-color", "#bd77f2");
-        $("#vaccineXI").css("background-color", "#bd77f2");
-        $("#vaccineSP").css("background-color", "#5f367e");
-        $("#all").css("background-color", "#bd77f2");
-    }
-}
+Interface.templateMobile =
+    `<table>
+              <thead>
+                <tr>
+                
+                  <th>SLOTS</th>
+                </tr>
+              </thead>
+                <tbody id="geeks">
+                {{#finalOutput}}
+                    <tr>
+                        <td>Age: {{ min_age_limit }}+, {{ fee_type }}, [Dose 1: {{ available_capacity_dose1 }}/Dose 2: {{ available_capacity_dose2 }}] , {{ vaccine }},  Distance: {{ distance }} Km  <br> {{ name }}, {{ address }}, {{ pincode }}<br>{{ date }}</td>
+                    </tr>
+                {{/finalOutput}}  
+                </tbody>
+            </table>`;
+
+
 
 Interface.filter_condition = {};
 Interface.setFilter = function (condition) {
@@ -73,13 +53,22 @@ Interface.setFilter = function (condition) {
         Interface.repaint();
         return;
     }
+
     if (condition.min_age_limit !== undefined) {
         Interface.filter_condition.min_age_limit = condition.min_age_limit;
+        $("#ageSelect").css("background-color","#5f367e");
     }
+
     if (condition.vaccine !== undefined) {
         Interface.filter_condition.vaccine = condition.vaccine;
+        $("#vaccineSelect").css("background-color","#5f367e");
     }
-    Interface.buttonCSS(condition);
+
+    if (condition.fee_type !== undefined) {
+        Interface.filter_condition.fee_type = condition.fee_type;
+        $("#feeSelect").css("background-color","#5f367e");
+    }
+
     Interface.paintFiltered(Interface.filter_condition);
 }
 
@@ -102,24 +91,35 @@ Interface.paintFiltered =
                 }
             }
             if (toselect == true)
-                Interface.filtereddata.finalOutput.push(session);
+                Interface.InstertFilteredDataSorted(session);
         }
         var text = Mustache.render(Interface.template, Interface.filtereddata);
         $("#viewCenters").html(text);
+        var textForMobile = Mustache.render(Interface.templateMobile, Interface.filtereddata);
+        $("#viewCentersInMobile").html(textForMobile);
     };
+
+function checkWhetherToPush(arr, val) {
+    return arr.some(function (arrVal) {
+        return val.sessionID === arrVal.sessionID;
+    });
+}
+
+Interface.InstertFilteredDataSorted = function (session)  //On basis of distance
+{
+    if (!checkWhetherToPush(Interface.filtereddata.finalOutput, session)) {
+        Interface.filtereddata.finalOutput.push(session);
+        Interface.filtereddata.finalOutput.sort((firstItem, secondItem) => firstItem.distance - secondItem.distance);
+    }
+}
 
 Interface.repaint =
     function () {
         Interface.filter_condition = {};
-        console.log("Called: Interface.repaint");
-        $("#vaccineSH").css("background-color", "#bd77f2");
-        $("#vaccineXI").css("background-color", "#bd77f2");
-        $("#vaccineSP").css("background-color", "#bd77f2");
-        $("#age18").css("background-color", "#bd77f2");
-        $("#age45").css("background-color", "#bd77f2");
-        $("#all").css("background-color", "#5f367e");
+        $(".dd").css("background-color","#bd77f2");
         var text = Mustache.render(Interface.template, StaticData);
         $("#viewCenters").html(text);
-        // console.log("Repaint");
+        var textForMobile = Mustache.render(Interface.templateMobile, Interface.filtereddata); //check for error
+        $("#viewCentersInMobile").html(textForMobile);
     };
 

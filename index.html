@@ -1,102 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="table.css" />
-    <link rel="stylesheet" href="container.css" />
-    <link rel="stylesheet" href="buttonGroup.css" />
-    <link rel="stylesheet" href="slider.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vaccine Availability Checker</title>
-    <link rel="shortcut icon" href="screenshot/logo2.png" type="image/x-icon" />
-  </head>
 
-  <body>
+<head>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="table.css" />
+  <link rel="stylesheet" href="container.css" />
+  <link rel="stylesheet" href="buttonGroup.css" />
+  <link rel="stylesheet" href="slider.css" />
+  <link rel="stylesheet" href="background.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaccine Availability Checker</title>
+  <link rel="shortcut icon" href="screenshot/Capture.PNG" type="image/x-icon" />
+
+  <!-- <style>
+    .my-container {
+        border: 1px solid green;
+    }
+
+    .my-row {
+        border: 3px solid red;
+        width:inherit;
+    }
+
+    .my-col {
+        border: 3px dotted blue;
+    }
+</style> -->
+</head>
+
+<body>
+  <div id="vanta-canvas" style="background-color: black;">
     <header id="title">
-      <img id = "logo" onClick = "location.reload()"src="screenshot/logoNew.png" />
-      <div class="head_text">Vaccine Availability Checker</div>
+      <!-- <img id="logo" onClick="location.reload()" src="screenshot/logo.png" /> -->
+      <div class="head_text1" onClick="location.reload()">Vaccine Availability Checker</div>
+      <div class="head_text2">Sakhi Learning LLP</div>
     </header>
+    <div class="row d-flex justify-content-center">
+      <div class="container my-container">
+        <div class="row my-row">
+          <div class="col-md-12 col-sm-12 my-col">
+            <div class="all_buttons">
+              <div class="range">
+                <div class="sliderValue">
+                  <span>5</span>
+                </div>
+                <div class="field">
+                  <div class="value_left">5 KM</div>
+                  <input type="range" min="5" max="50" value="5" id="sliderBar"
+                    onchange="StaticData.getCentersByPincode(value)" />
+                  <div class="value_right">50 KM</div>
+                </div>
+              </div>
+              <div class="btn_parent">
+                <div class="btn-group">
 
-    <div class="allButtons">
-      <div class="slidecontainer">
-        <input
-          id="myRange"
-          type="range"
-          min="50"
-          max="300"
-          value="50"
-          step="10"
-          onchange="StaticData.getCentersByPincode(value)"
-        />
-      </div>
 
-      <div class="btn-group" id="roundAge">
-        <button
-          class="roundB"
-          id="age18"
-          value="18"
-          onclick="Interface.setFilter({'min_age_limit':18})"
-        >
-          18+
-        </button>
-        <button
-          class="roundB"
-          id="age45"
-          value="45"
-          onclick="Interface.setFilter({'min_age_limit':45})"
-        >
-          45+
-        </button>
-        <button
-          class="roundB"
-          id="vaccineSH"
-          value="Covisheild"
-          onclick="Interface.setFilter({'vaccine':'COVISHIELD'})"
-        >
-          Covisheild
-        </button>
-        <button
-          class="roundB"
-          id="vaccineXI"
-          value="Covaxin"
-          onclick="Interface.setFilter({'vaccine':'COVAXIN'})"
-        >
-          Covaxin
-        </button>
-        <button
-          class="roundB"
-          id="vaccineSP"
-          value="Sputnik"
-          onclick="Interface.setFilter({'vaccine':'SPUTNIK'})"
-        >
-          Sputnik
-        </button>
-        <button
-          class="roundB"
-          id="all"
-          value="All"
-          onclick="Interface.setFilter()"
-        >
-          All
-        </button>
+                  <select onchange="Interface.setFilter({'min_age_limit':value})" class="dd" name="age" id="ageSelect">
+                    <option id="age" value="Age" hidden selected>Age</option>
+                    <option value="18">18+</option>
+                    <option value="45">45+</option>
+                  </select>
+                  <select onchange="Interface.setFilter({'vaccine':value})" class="dd" name="vaccine"
+                    id="vaccineSelect">
+                    <option id="vaccine" value="Vaccine" hidden selected>Vaccine</option>
+                    <option value="COVISHIELD">Covisheild</option>
+                    <option value="COVAXIN">Covaxin</option>
+                    <option value="SPUTNIK">Sputnik</option>
+                  </select>
+                  <select onchange="Interface.setFilter({'fee_type':value})" class="dd" name="fee" id="feeSelect">
+                    <option id="fee" value="Fee" hidden selected>Fee Type</option>
+                    <option value="Free">Free</option>
+                    <option value="Paid">Paid</option>
+                  </select>
+                  <button type="button" id="all" value="All" onclick="Interface.setFilter()">
+                    All
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="justify-content: center;">
+          <div class=".col-md-3 .col-md-6 .col-md-3">
+
+            <div class="tblContent" id="viewCenters"></div>
+            <div class="tblContent" id="viewCentersInMobile">Hello</div>
+
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <section>
-      <div class="tbl-content" id="viewCenters"></div>
-    </section>
-    <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
-      integrity="sha512-3GRj7sme01zpWwRNPNy48Rda1bD9cq34lqYG5vb8ZXGc+wRqsoBJ3+AC25IYW5w5SrWlzHqIpNIxZt5QF9sXLg=="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="interface.js"></script>
-    <script src="staticData.js"></script>
-    <script src="functions.js"></script>
-  </body>
+  <!-- 2nd -->
+  <div class="learnmore">
+    <div
+      style="display: flex;margin:8% 0%;box-shadow: 100%;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;">
+      <div style="margin-left: auto;background-color: #858b68;width: 25%;border-bottom-left-radius: 30px;border-top-left-radius: 30px;text-align:center;color: white;padding: 4% 10% 0% 0.5%;
+        font-weight: 400;
+        font-size: xxx-large;">
+        FAQs
+        <p style="font-size: large;text-align: left;padding: 1% 0% 0% 24%;
+      width: 115%;">Facts people should know about covid-19</p>
+
+        <button style="margin-top:20% ;" type="button" class="btn btn-light"
+          onclick="window.open('https://www.who.int/news-room/q-a-detail/coronavirus-disease-(covid-19)-vaccines?adgroupsurvey={adgroupsurvey}&gclid=CjwKCAjww-CGBhALEiwAQzWxOuVujHyQiZMpPx79YybMrs_xPQrBP8QDnS2NLsbYbHJx2Ltq0OJRMhoCcGoQAvD_BwE')">
+          <p style="font-size: larger;margin:0%;">Learn More</p>
+        </button>
+      </div>
+      <img
+        style="width: 60%;border-bottom-right-radius: 30px;border-top-right-radius: 30px;margin-right: auto;display: block;"
+        src="screenshot/learnmore.png" />
+    </div>
+  </div>
+
+  <!-- 3rd  -->
+  <!-- <div> -->
+    <div id="vanta-canvas-aboutus" style="background-color: grey;display: flex;">
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+    </div>
+  <!-- </div> -->
+
+
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js?category=HSPVCC"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"
+    integrity="sha512-3GRj7sme01zpWwRNPNy48Rda1bD9cq34lqYG5vb8ZXGc+wRqsoBJ3+AC25IYW5w5SrWlzHqIpNIxZt5QF9sXLg=="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="interface.js"></script>
+  <script src="staticData.js"></script>
+  <script src="functions.js"></script>
+
+  <!-- //HOME BACKGROUND  -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.18/vanta.globe.min.js"></script>
+  <script type="text/javascript">
+    VANTA.GLOBE({
+      el: "#vanta-canvas",
+      mouseControls: false,
+      touchControls: true,
+      gyroControls: true,
+      minHeight: 200.00,
+      minWeight: 200.00,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      backgroundColor: 0x2D2926,
+      color: 0x5f367e,
+      color2: 0xffffff
+    })
+  </script> -->
+
+  <!-- // ABOUT US BACKGROUND -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+  <script type="text/javascript">
+    VANTA.TOPOLOGY({
+      el: "#vanta-canvas-aboutus",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xd79b3,
+      backgroundColor: 0xffffff
+    })
+  </script> -->
+
+  <!-- Slider Hover -->
+  <script>
+    const slideValue = document.querySelector("span");
+    const inputSlider = document.querySelector("input");
+    inputSlider.oninput = (() => {
+      let value = inputSlider.value;
+      slideValue.textContent = value;
+      slideValue.style.left = (value * 2) + "%";
+      slideValue.classList.add("show");
+    });
+    inputSlider.onblur = (() => {
+      slideValue.classList.remove("show");
+    });
+
+    // Slider Color Range Input
+    inputSlider.addEventListener("input", function () {
+      var x = inputSlider.value;
+      x = x * 2;
+      color = 'linear-gradient(to right, #5f367e ' + (x - 5) + '%, white ' + (x - 5) + '%)';
+
+      $("#sliderBar").css("background", color);
+    })
+  </script>
+
+</body>
+
 </html>

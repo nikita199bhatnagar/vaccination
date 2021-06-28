@@ -1,50 +1,97 @@
-.allButtons{
-    /* display: flex; */
-    justify-content:center;
+.all_buttons{
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    justify-content: center;
+    display: grid;
+    font-weight: 500;
+    border-radius:20px;
+    background-color:#bd77f2; 
+    margin:0 25% 1% 25%; 
 }
 
-#roundAge{
-    border-radius: 25px;
-    background-color:#bd77f2;
+.dd{
+    padding: 2%;
+    margin: 0 1% 1% 1%;
+    border-radius: 2rem;
+    font-weight: 500;
+    color: white;    
+    background-color:#bd77f2; 
+    border-color: #bd77f2;
+    /* -moz-appearance: none; */
+    /* -webkit-appearance: none; */
+    /* border: none; */
+    cursor: pointer;
+    transition-duration: 0.4s;
+    outline: 0;
+}
+  
+.dd:hover {
+    background-color: #5f367e;
+    color: white;
+}
+
+.dd::after:hover{
+    background-color: #5f367e;
+    color: white;
+}
+
+.btn_parent{
+    margin: 0;
     text-align: center;
     justify-content: center;
-    /* width: 32.052%; */
+    display: flex;
 }
 
-.roundB{
-    border-radius: 25px;
+.btn-group{
+    text-align: center;
+    width: 100%;
+    justify-content: center;
 }
- 
+
 .btn-group button{
+    padding: 1% 4%;
+    margin: 0 1% 1% 1%;
+    border-radius: 2rem;
+    font-weight: 500;
+    color: white;
+    background-color:#bd77f2; 
+    border-color: #bd77f2;
+    cursor: pointer;
+    outline: 0;
+}
+
+.btn-group button:hover {
+    transition-duration: 0.4s;
+    background-color: #5f367e; 
+    color: white;
+}
+
+
+
+/* .btn-group button{
     background-color:#bd77f2; 
     border: 1px #bd77f2;
     color: white; 
-    padding: 10px 24px;
+    padding: 1.5% 3.886%;
     cursor: pointer;
-    float: left; 
-}
-
-.btn-group button:not(:last-child){
-    border-right: none;
-}
-
-.btn-group:after{
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.btn-group button:hover{
-    background-color: #5f367e;
-}
-
-/* 
-.button:hover {
-    background-color: #3e8e41
-}
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    border-radius: 25px;
+    font-weight: 500;
 } */
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1258px) {
+
+    .btn-group button{
+        padding: 1% 2.339%;
+    }
+
+    .all_buttons{
+        background-color:#bd77f2; 
+        margin: 5% 1% 8% 1%;
+        border-radius:20px;
+    }
+
+    
+}
