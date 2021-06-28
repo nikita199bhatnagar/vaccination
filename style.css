@@ -38,20 +38,12 @@ body {
 
 @media only screen and (max-width: 1258px) {
 
-  body {
-    background-image: url("screenshot/mobilebg.jpg");
-    background-size: cover;
-  }
-
   .head_text1 {
     font-size: x-large;
   }
   
   .head_text2{
     font-size: x-large;}
-  
-  
-  
 
 }
 

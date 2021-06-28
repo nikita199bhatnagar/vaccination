@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="table.css" />
@@ -33,7 +35,7 @@
 </head>
 
 <body>
-  <div id="vanta-canvas">
+  <div id="vanta-canvas" style="background-color: black;">
     <header id="title">
       <!-- <img id="logo" onClick="location.reload()" src="screenshot/logo.png" /> -->
       <div class="head_text1" onClick="location.reload()">Vaccine Availability Checker</div>
@@ -98,16 +100,55 @@
 
   <!-- 2nd -->
   <div class="learnmore">
-    <div style="display: flex;">
-    <div style="margin-left: auto;background-color: black;width: 25%;border-bottom-left-radius: 30px;border-top-left-radius: 30px;text-align:center;color: white;padding: 6% 6% 0% 1%;font-weight: 400;font-size: x-large;">Masks can save lives</div>
+    <div
+      style="display: flex;margin:8% 0%;box-shadow: 100%;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;">
+      <div style="margin-left: auto;background-color: #858b68;width: 25%;border-bottom-left-radius: 30px;border-top-left-radius: 30px;text-align:center;color: white;padding: 4% 10% 0% 0.5%;
+        font-weight: 400;
+        font-size: xxx-large;">
+        FAQs
+        <p style="font-size: large;text-align: left;padding: 1% 0% 0% 24%;
+      width: 115%;">Facts people should know about covid-19</p>
+
+        <button style="margin-top:20% ;" type="button" class="btn btn-light"
+          onclick="window.open('https://www.who.int/news-room/q-a-detail/coronavirus-disease-(covid-19)-vaccines?adgroupsurvey={adgroupsurvey}&gclid=CjwKCAjww-CGBhALEiwAQzWxOuVujHyQiZMpPx79YybMrs_xPQrBP8QDnS2NLsbYbHJx2Ltq0OJRMhoCcGoQAvD_BwE')">
+          <p style="font-size: larger;margin:0%;">Learn More</p>
+        </button>
+      </div>
       <img
         style="width: 60%;border-bottom-right-radius: 30px;border-top-right-radius: 30px;margin-right: auto;display: block;"
-        src="screenshot/learnmore.png">
+        src="screenshot/learnmore.png" />
     </div>
   </div>
 
   <!-- 3rd  -->
-  <div id="vanta-canvas-aboutus"></div>
+  <!-- <div> -->
+    <div id="vanta-canvas-aboutus" style="background-color: grey;display: flex;">
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+
+        <div id="infoBlock1">
+          <img class="profilePic" src="screenshot/specimen.jpg" />
+          <i class="fab fa-linkedin" style="font-size: -webkit-xxx-large;"></i>
+        </div>
+    </div>
+  <!-- </div> -->
 
 
   <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -122,12 +163,12 @@
   <script src="functions.js"></script>
 
   <!-- //HOME BACKGROUND  -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.18/vanta.globe.min.js"></script>
   <script type="text/javascript">
     VANTA.GLOBE({
       el: "#vanta-canvas",
-      mouseControls: true,
+      mouseControls: false,
       touchControls: true,
       gyroControls: true,
       minHeight: 200.00,
@@ -138,10 +179,10 @@
       color: 0x5f367e,
       color2: 0xffffff
     })
-  </script>
+  </script> -->
 
   <!-- // ABOUT US BACKGROUND -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
   <script type="text/javascript">
     VANTA.TOPOLOGY({
@@ -152,9 +193,11 @@
       minHeight: 200.00,
       minWidth: 200.00,
       scale: 1.00,
-      scaleMobile: 1.00
+      scaleMobile: 1.00,
+      color: 0xd79b3,
+      backgroundColor: 0xffffff
     })
-  </script>
+  </script> -->
 
   <!-- Slider Hover -->
   <script>
