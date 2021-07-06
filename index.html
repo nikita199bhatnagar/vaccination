@@ -8,6 +8,7 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -19,16 +20,18 @@
   <link rel="stylesheet" href="buttonGroup.css" />
   <link rel="stylesheet" href="slider.css" />
   <link rel="stylesheet" href="background.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="slide.css" />
+  <link rel="stylesheet" href="aboutus.css" />
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaccine Availability Checker</title>
   <link rel="shortcut icon" href="screenshot/Capture.PNG" type="image/x-icon" />
-  <link rel="stylesheet" href="check.css" />
 
 
-  <!-- <style>
-    .my-container {
+  <style>
+    /* .my-container {
         border: 1px solid green;
     }
 
@@ -39,12 +42,59 @@
 
     .my-col {
         border: 3px dotted blue;
+    } */
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      padding: 0.8%;
+      border-radius: 20%;
     }
-</style> -->
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="vanta-canvas" style="background-color: black;">
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true" style="color: #343434; size: 100%;"></i></button>
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- <video autoplay muted loop id="myVideo">
+    <source src="screenshot/backgroundVideo.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+    <p style="color: black;">YO</p>
+  </video> -->
+  <div id="vanta-canvas" style="background: url(screenshot/pexels-jessica-lewis-4022785.jpg);background-size:105vw">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="color: white;">
       <div class="container-fluid">
@@ -63,13 +113,20 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown" style="justify-content: flex-end;">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#vanta-canvas">Home</a>
+              <a class="nav-link active" aria-current="page" href="#vanta-canvas">Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="https://github.com/Sakhi-Learning-LLP/vaccination.git" target="_blank">GitHub
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#vanta-canvas-aboutus">About Us</a>
+              <a class="nav-link" href="#vanta-canvas-aboutus">About Us </a>
+            </li>
+            <li class="nav-item">
+              <input type="checkbox" id="toggle" class="toggle--checkbox" />
+              <label for="toggle" class="toggle--label">
+                <span class="toggle--label-background"></span>
+              </label>
             </li>
           </ul>
         </div>
@@ -84,7 +141,8 @@
         <div class="row my-row">
           <div class="col-md-12 col-sm-12 my-col">
             <div class="all_buttons">
-              <div class="range">
+
+              <!-- <div class="range">
                 <div class="sliderValue">
                   <span>5</span>
                 </div>
@@ -94,7 +152,47 @@
                     onchange="StaticData.getCentersByPincode(value)" />
                   <div class="value_right">50 KM</div>
                 </div>
+              </div> -->
+
+              <div class="range-wrap">
+                <input type="range" class="range" min="0" max="50" value="25"
+                  onchange="StaticData.getCentersByPincode(value)">
+                <output class="bubble" style="font-family: monospace;"></output>
               </div>
+
+
+              <script>
+                // <!-- Forked from Chris Coyier's pen : https://codepen.io/chriscoyier/pen/eYNQyPe -->
+
+                const allRanges = document.querySelectorAll(".range-wrap");
+                allRanges.forEach((wrap) => {
+                  const range = wrap.querySelector(".range");
+                  const bubble = wrap.querySelector(".bubble");
+
+                  range.addEventListener("input", () => {
+                    setBubble(range, bubble);
+                  });
+
+                  // setting bubble on DOM load
+                  setBubble(range, bubble);
+                });
+
+                function setBubble(range, bubble) {
+                  const val = range.value;
+
+                  const min = range.min || 0;
+                  const max = range.max || 100;
+
+                  const offset = Number(((val - min) * 100) / (max - min));
+
+                  bubble.textContent = val;
+
+                  // yes, 14px is a magic number
+                  bubble.style.left = `calc(${offset}% - 14px)`;
+                }
+              </script>
+
+
               <div class="btn_parent">
                 <div class="btn-group">
 
@@ -140,7 +238,7 @@
   <div class="learnmore">
     <div
       style="display: flex;margin:8% 0%;box-shadow: 100%;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;">
-      <div style="margin-left: auto;background-color: #858b68;width: 25%;border-bottom-left-radius: 30px;border-top-left-radius: 30px;text-align:center;color: white;padding: 4% 10% 0% 0.5%;
+      <div style="margin-left: auto;background-color:#6a798f;width: 25%;border-bottom-left-radius: 30px;border-top-left-radius: 30px;text-align:center;color: white;padding: 4% 10% 0% 0.5%;
         font-weight: 400;
         font-size: xxx-large;">
         FAQs
@@ -269,33 +367,38 @@
         <div class="container"> -->
     <div class="row full-height justify-content-center" style="width: 100%;">
 
-        <div class="col-lg-10 col-xl-8 align-self-center padding-tb">
-          <div class="sec mx-auto text-center slider-height-padding" style="justify-content: center;
+      <div class="col-lg-10 col-xl-8 align-self-center padding-tb">
+        <div class="sec mx-auto text-center slider-height-padding" style="justify-content: center;
                         display: flex;">
-            <input class="checkbox frst" type="radio" id="slide-1" name="slider" checked />
-            <label for="slide-1"></label>
-            <input class="checkbox scnd" type="radio" name="slider" id="slider-2" />
-            <label for="slider-2"></label>
-            <input class="checkbox thrd" type="radio" name="slider" id="slider-3" />
-            <label for="slider-3"></label>
-            <input class="checkbox foth" type="radio" name="slider" id="slider-4" />
-            <label for="slider-4"></label>
-            <ul class="list">
-              <li>
-                <span>MUKESH</span>
-              </li>
-              <li>
-                <span>TOY PIG</span>
-              </li>
-              <li>
-                <span>SHY PORTRAIT</span>
-              </li>
-              <li>
-                <span>SKATEBOARD FACE</span>
-              </li>
-            </ul>
-          </div>
+          <input class="checkbox frst" type="radio" id="slide-1" name="slider" checked />
+          <label for="slide-1"></label>
+          <input class="checkbox scnd" type="radio" name="slider" id="slider-2" />
+          <label for="slider-2"></label>
+          <input class="checkbox thrd" type="radio" name="slider" id="slider-3" />
+          <label for="slider-3"></label>
+          <input class="checkbox foth" type="radio" name="slider" id="slider-4" />
+          <label for="slider-4"></label>
+          <input class="checkbox fith" type="radio" name="slider" id="slider-5" />
+          <label for="slider-5"></label>
+          <ul class="list">
+            <li>
+              <span>MUKESH</span>
+            </li>
+            <li>
+              <span>TOY PIG</span>
+            </li>
+            <li>
+              <span>SHY PORTRAIT</span>
+            </li>
+            <li>
+              <span>SKATEBOARD FACE</span>
+            </li>
+            <li>
+              <span>FACE</span>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
     <!-- </div>
       </div> -->
@@ -307,107 +410,14 @@
 
 
 
-  <!--Footer-->
-  <footer class="page-footer deep-purple center-on-small-only pt-0">
-
-    <!--Footer Links-->
-    <div class="container">
-
-      <!--Grid row-->
-      <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
-
-        <!--Grid column-->
-        <div class="col-md-2 mb-3">
-          <h6 class="title font-bold"><a href="#!">About us</a></h6>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-2 mb-3">
-          <h6 class="title font-bold"><a href="#!">Products</a></h6>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-2 mb-3">
-          <h6 class="title font-bold"><a href="#!">Awards</a></h6>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-2 mb-3">
-          <h6 class="title font-bold"><a href="#!">Help</a></h6>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-2 mb-3">
-          <h6 class="title font-bold"><a href="#!">Contact</a></h6>
-        </div>
-        <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
-
-      <hr class="rgba-white-light" style="margin: 0 15%;">
-
-      <!--Grid row-->
-      <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-
-        <!--Grid column-->
-        <div class="col-md-8 col-12 mt-5">
-          <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium,
-            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-            vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-            aut fugit, sed quia consequuntur.</p>
-
-        </div>
-        <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
-
-      <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
-
-      <!--Grid row-->
-      <div class="row pb-3">
-
-        <!--Grid column-->
-        <div class="col-md-12">
-
-          <div class="footer-socials mb-5 flex-center">
-            <!--Facebook-->
-            <a class="icons-sm fb-ic"><i class="fa fa-facebook fa-lg white-text mr-md-4"> </i></a>
-            <!--Twitter-->
-            <a class="icons-sm tw-ic"><i class="fa fa-twitter fa-lg white-text mx-md-4"> </i></a>
-            <!--Google +-->
-            <a class="icons-sm gplus-ic"><i class="fa fa-google-plus fa-lg white-text mx-md-4"> </i></a>
-            <!--Linkedin-->
-            <a class="icons-sm li-ic"><i class="fa fa-linkedin fa-lg white-text mx-md-4"> </i></a>
-            <!--Instagram-->
-            <a class="icons-sm ins-ic"><i class="fa fa-instagram fa-lg white-text mx-md-4"> </i></a>
-            <!--Pinterest-->
-            <a class="icons-sm pin-ic"><i class="fa fa-pinterest fa-lg white-text ml-md-4"> </i></a>
-          </div>
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-
+  <footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.2);">
+      © 2021 Copyright:
+      <a class="text-dark" href="#">Sakhi Learning LLP</a>
     </div>
-    <!--/Footer Links-->
-
-    <!--Copyright-->
-    <div class="footer-copyright">
-      <div class="container-fluid">
-        © 2016 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
-      </div>
-    </div>
-    <!--/Copyright-->
-
+    <!-- Copyright -->
   </footer>
-  <!--/Footer-->
 
 
 
@@ -478,7 +488,7 @@
     inputSlider.addEventListener("input", function () {
       var x = inputSlider.value;
       x = x * 2;
-      color = 'linear-gradient(to right, #5f367e ' + (x - 5) + '%, white ' + (x - 5) + '%)';
+      color = 'linear-gradient(to right, #605b59 ' + (x - 5) + '%, white ' + (x - 5) + '%)';
 
       $("#sliderBar").css("background", color);
     })

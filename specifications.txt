@@ -51,9 +51,9 @@ Drop down list for vaccine and payment
 
 Work:-
     [] About Us
-    [] links in navbar 
-    [] footer
-    [] backgrounds
+    [Done] links in navbar 
+    [Done] footer
+    [] backgrounds 
     [] extra div for displaying information
     [] location bar
     [] [learn about how slider work so as to perfectly build it]

@@ -70,7 +70,11 @@
  .checkbox.foth + label{
    background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
  }
- 
+ .checkbox.fith + label{
+  background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+}
+
+
  .checkbox:checked + label{
    box-shadow: 0 8px 25px 0 rgba(16,39,112,.3);
    transform: scale(1.3);
@@ -145,7 +149,9 @@
  .list li:nth-child(4) {
    background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
  }
- 
+ .list li:nth-child(5) {
+  background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+}
  
  .checkbox.frst:checked ~ .list li:nth-child(1) {
    opacity: 1;
@@ -167,22 +173,11 @@
    pointer-events: auto;
    border-radius: 16px;
  }
- 
- .logo {
-     position: absolute;
-     top: 30px;
-     right: 30px;
-     display: block;
-     z-index: 100;
-     transition: all 250ms linear;
- }
- .logo img {
-     height: 26px;
-     width: auto;
-     display: block;
- }
- 
- 
+ .checkbox.foth:checked ~ .list li:nth-child(5) {
+  opacity: 1;
+  pointer-events: auto;
+  border-radius: 16px;
+}
  
  @media (max-width: 767px) {
    .slider-height-padding {
