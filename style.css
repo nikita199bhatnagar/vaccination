@@ -34,18 +34,31 @@ body {
   width: fit-content;
 }
 
-
+#vanta-canvas{ 
+  background: url("screenshot/bg10.png");
+  background-size: cover;
+}
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-@media only screen and (max-width: 1258px) {
+@media only screen and (max-width: 600px) {
 
   .head_text1 {
     font-size: x-large;
   }
   
   .head_text2{
-    font-size: x-large;}
+    font-size: x-large;
+  }
 
-}
+  #vanta-canvas{ 
+    background: url("screenshot/mobilebg.png");
+    background-size: cover;
+  }
+  .row{
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  }
 
 
+  

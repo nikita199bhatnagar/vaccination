@@ -39,12 +39,12 @@
   
 .img-area{
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 35%;
+  height: 42%;
   border: 5px solid #fff;
   overflow: hidden;
-  top: 15px;
-  left: 125px;
+  top: 4%;
+  left: 33%;
   border-radius: 50%;
 }
   
@@ -55,14 +55,15 @@
 .carousel-indicators{
     left: 0;
     top: auto;
-    bottom: -70px; 
+    bottom: -10%;
+
 }
   
   .carousel-indicators li{
     background: #fff;
     border-radius: 50%;
-    width: 15px;
-    height: 15px; 
+    height: 0px; 
+    width: 18px;
 }
   
   
@@ -71,5 +72,7 @@
 }
   
  
-  
+.boxCarousel{
+  padding: 3%;
+}
 
