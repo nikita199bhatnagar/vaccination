@@ -5,7 +5,7 @@
     display: grid;
     font-weight: 500;
     border-radius:20px;
-    background-color:#bd77f2; 
+    background-color:#4da8da; 
     margin:0 25% 1% 25%; 
 }
 
@@ -15,8 +15,8 @@
     border-radius: 2rem;
     font-weight: 500;
     color: white;    
-    background-color:#bd77f2; 
-    border-color: #bd77f2;
+    background-color:#4da8da; 
+    border-color: #4da8da;
     /* -moz-appearance: none; */
     /* -webkit-appearance: none; */
     /* border: none; */
@@ -26,10 +26,14 @@
 }
   
 .dd:hover {
-    background-color: #5f367e;
+    background-color: #007cc7;
     color: white;
 }
 
+.dd::after:hover{
+    background-color: #007cc7;
+    color: white;
+}
 
 .btn_parent{
     margin: 0;
@@ -47,26 +51,34 @@
 .btn-group button{
     padding: 1% 4%;
     margin: 0 1% 1% 1%;
-    border-radius: 2rem;
+
     font-weight: 500;
     color: white;
-    background-color:#bd77f2; 
-    border-color: #bd77f2;
-    cursor: pointer;
+    background-color:#4da8da; 
+    border-color: #4da8da;
     outline: 0;
+
+  border: none;
+  /* padding: 10px 20px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  /* margin: 4px 2px; */
+  cursor: pointer;
+  border-radius: 30px;
 }
 
 .btn-group button:hover {
     transition-duration: 0.4s;
-    background-color: #5f367e; 
+    background-color: #007cc7; 
     color: white;
 }
 
 
 
 /* .btn-group button{
-    background-color:#bd77f2; 
-    border: 1px #bd77f2;
+    background-color:#4da8da; 
+    border: 1px #4da8da;
     color: white; 
     padding: 1.5% 3.886%;
     cursor: pointer;
@@ -84,10 +96,13 @@
     }
 
     .all_buttons{
-        background-color:#bd77f2; 
+        background-color:#4da8da; 
         margin: 5% 1% 8% 1%;
         border-radius:20px;
     }
 
+    /* .my-row{
+        margin: 0;
+    } */
     
 }
