@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="testimonial.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="hero">
+        <h1>Testimonials</h1>
+        <div>
+            <div class="carousel">
+                <div class="indicator">
+                    <span class="arrows act"></span>
+                    <span class="arrows"></span>
+                    <span class="arrows"></span>
+                    <span class="arrows"></span>
+                </div>
+                <div class="testimonial">
+                <div class="slide-row" id="slide">
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Sarah Samona is an American internet entrepreneur and media proprietor, and investor. She
+                                is the
+                                founder of the multi-national technology company Zara.</p>
+                            <h3>Yash</h3>
+                            <p>Zara Inc.</p>
+                        </div>
+                        <div class="user-img"> <img src="screenshot/1.jpg">
+                        </div>
+                    </div>
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Sarah Samona is an American internet entrepreneur and media proprietor, and investor. She
+                                is the
+                                founder of the multi-national technology company Zara.</p>
+                            <h3>Sarah</h3>
+                            <p>Zara Inc.</p>
+                        </div>
+                        <div class="user-img"> <img src="screenshot/2.jpg">
+                        </div>
+                    </div>
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Sarah Samona is an American internet entrepreneur and media proprietor, and investor. She
+                                is the
+                                founder of the multi-national technology company Zara.</p>
+                            <h3>zara</h3>
+                            <p>Zara Inc.</p>
+                        </div>
+                        <div class="user-img"> <img src="screenshot/3.jpg">
+                        </div>
+                    </div>
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Sarah Samona is an American internet entrepreneur and media proprietor, and investor. She
+                                is the
+                                founder of the multi-national technology company Zara.</p>
+                            <h3>barry</h3>
+                            <p>Zara Inc.</p>
+                        </div>
+                        <div class="user-img"> <img src="screenshot/4.jpg">
+                        </div>
+                    </div>
+                    <div class="slide-col">
+                        <div class="user-text">
+                            <p>Sarah Samona is an American internet entrepreneur and media proprietor, and investor. She
+                                is the
+                                founder of the multi-national technology company Zara.</p>
+                            <h3>Savy</h3>
+                            <p>Zara Inc.</p>
+                        </div>
+                        <div class="user-img"> <img src="screenshot/5.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var arrows = document.getElementsByClassName("arrows");
+        var slide = document.getElementById("slide");
+
+        arrows[0].onclick = function(){
+            slide.style.transform = "translateX(0px)";
+            for(i=0;i<5;i++){
+                btn[i].classList.remove("act");
+            }
+            this.classList.add("act");
+        }
+        arrows[1].onclick = function(){
+            slide.style.transform = "translateX(-800px)";
+            for(i=0;i<5;i++){
+                btn[i].classList.remove("act");
+            }
+            this.classList.add("act");
+        }
+        arrows[2].onclick = function(){
+            slide.style.transform = "translateX(-1600px)";
+            for(i=0;i<5;i++){
+                btn[i].classList.remove("act");
+            }
+            this.classList.add("act");
+        }
+        arrows[3].onclick = function(){
+            slide.style.transform = "translateX(-2400px)";
+            for(i=0;i<5;i++){
+                btn[i].classList.remove("act");
+            }
+            this.classList.add("act");
+        }
+        arrows[4].onclick = function(){
+            slide.style.transform = "translateX(-3200px)";
+            for(i=0;i<5;i++){
+                btn[i].classList.remove("act");
+            }
+            this.classList.add("act");
+        }
+    </script>
+</body>
+
+</html>

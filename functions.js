@@ -1,5 +1,4 @@
 $(document).ready(function () {
-   console.log("ready!");
    initGeolocation();
 });
 
@@ -16,8 +15,7 @@ function initGeolocation() {
 function success(position) {
    myLocation.long = position.coords.longitude;
    myLocation.lat = position.coords.latitude;
-   StaticData.getCentersByPincode(600);
-   
+   StaticData.getCentersByPincode(25);
 }
 
 function fail() {
@@ -46,5 +44,48 @@ function distance(lat1, lon1, lat2, lon2, unit) {
    }
 }
 
+$("#all").on("click", function () {
+   $('.dd option').prop('selected', function () {
+      return this.defaultSelected;
+   });
+});
 
+// function handlePermission() {
+//    navigator.permissions.query({name:'geolocation'}).then(function(result) {
+//      if (result.state == 'granted') {
+//        report(result.state);
+//        geoBtn.style.display = 'none';
+//      } else if (result.state == 'prompt') {
+//        report(result.state);
+//        geoBtn.style.display = 'none';
+//        navigator.geolocation.getCurrentPosition(revealPosition,positionDenied,geoSettings);
+//      } else if (result.state == 'denied') {
+//        report(result.state);
+//        geoBtn.style.display = 'inline';
+//      }
+//      result.onchange = function() {
+//        report(result.state);
+//      }
+//    });
+//  }
+
+//  function report(state) {
+//    console.log('Permission ' + state);
+//  }
+
+//  handlePermission();
+
+navigator.geolocation.getCurrentPosition(function (position) {
+   // alert('allow');
+}, function () {
+   alert('Please grant location access to make the site work');
+   $('#myModal').modal("show");
+  
+      // $('#alertbox').click(function () {
+      //    $("#error").html("You Clicked on Click here Button");
+         
+      // });
+
+
+});
 

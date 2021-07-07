@@ -7,21 +7,61 @@ How do I show the information to the client
 Tasks List
 1. Show my current loctaion a webpage 
 2. Calculate distance from a particular location
-3. 
-\
 
 
-      "name": "ICGS Delhi",
-      "address": "MI Room, National Stadium Complex, New Delhi, 110001",
-      "district_name": "New Delhi",
-      "state_name": "Delhi",
-      "pincode": 110001,
-      "fee_type": "Free",
-      "sessions": [
-        {
-          "date": "15-05-2021",
-          "available_capacity": 0,
-          "min_age_limit": 45,
-          "vaccine": "COVISHIELD",
-        ]
 
+We need to show the pincode and also include the distance in the report 
+So that we can sort on the distance 
+Also district name will be good as a column 
+Ideally having a drop down to select the district
+
+
+
+
+  <!-- <div id="nearby-covid-places-mapmyindia">
+    <script type="text/javascript">
+        loadNearbyCovidCentresMapmyIndiaDiv(document.getElementById("nearby-covid-places-mapmyindia"));
+    </script>
+    </div> -->
+
+
+It's not mobile compatible that's the one issue I see
+Colours need to change to a lighter background and mellow colours as well else older people won't be able to see clearly
+Overall it's a simple design and if you are going against information display as a primary output this does the job
+But you need to roll it out quickly and publish it on LinkedIn
+
+
+
+Mobile responsive               []
+api call faster                 []
+Sticky Header                   [DONE]
+about us                        [] 
+Remove button select
+print "not available when data not present"
+Drop down list for vaccine and payment
+
+
+  Theme Changer
+  Improve UI
+  User Demographic Data load
+  Admin page to load stats.
+  Link to cowin page
+  covid stats data display
+  Articles and FAQs 
+
+Work:-
+    [] About Us
+    [Done] links in navbar 
+    [Done] footer
+    [] backgrounds 
+    [] extra div for displaying information
+    [] location bar
+    [] [learn about how slider work so as to perfectly build it]
+    [] Try to apply some map functionality
+    [] Make it beautifully responsive website
+    [] Capture the info about the Demographic of user base
+    [] [Be prepared for below 18 iteration of vaccination availability] 
+    [] Through an alert tell the user when location service is not enabled
+    [] Provide directions to the address of centre
+    [] When distance is increased, take care of the centre shown earlier
+    
