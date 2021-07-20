@@ -50,13 +50,18 @@ Drop down list for vaccine and payment
   Articles and FAQs 
 
 Work:-
-    About Us
-    Location bar
-    Home page UI improve (Ideas)
-    Robust css 
-    Collapsable Colomn
-    Theme changer
-    Dose 1 & 2 display
+    [] About Us
+    [Done] links in navbar 
+    [Done] footer
+    [] backgrounds 
+    [] extra div for displaying information
+    [] location bar
+    [] [learn about how slider work so as to perfectly build it]
+    [] Try to apply some map functionality
+    [] Make it beautifully responsive website
+    [] Capture the info about the Demographic of user base
+    [] [Be prepared for below 18 iteration of vaccination availability] 
+    [] Through an alert tell the user when location service is not enabled
+    [] Provide directions to the address of centre
+    [] When distance is increased, take care of the centre shown earlier
     
-Slots
-[]

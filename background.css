@@ -5,7 +5,23 @@
 
 #vanta-canvas-aboutus{
     width: 100%;
-    height: 100vh;
+    height: 70%;
+    background-color: #2d2926ff;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 1%;
+}
+
+#vanta-canvas-aboutus-mobile{
+    /* display: flex; */
+    display: none;
+    width: 100%;
+    height: 70%;
+    background-color: #2d2926ff;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 1%;
 }
 
 #learn{
@@ -13,10 +29,12 @@
     border-radius: 10px;
 }
 
-#infoBlock1{
+.infoBlock{
+    /* padding-top: 2%; */
     display: grid;
-    /* margin-left: auto; */
-
+    height: fit-content;
+    width: 25%;
+    margin: 0 0 0 1%;
 }
 
 .profilePic{
@@ -24,4 +42,24 @@
     width: 210px;
     margin: 2%;
     border-radius: 100%;
+}
+
+.aboutus-text{
+   background-color: blueviolet;
+   border-radius: 30px;
+   width: auto;
+   position: absolute;
+   margin: 14% 0px 0 6%;
+   width: 15%;
+}
+
+
+@media only screen and (max-width: 727px) {
+    #vanta-canvas-aboutus{
+        display: none;
+    }
+    #vanta-canvas-aboutus-mobile{
+        display:flex;
+    }
+
 }
