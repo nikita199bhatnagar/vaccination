@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+.range{
+  height: 5vh;
+  width: auto;
+  background: #bd77f2;
+  border-radius: 25px 25px 0 0;
+  display: grid;
+  text-align: center;
+  place-items: center;
+}
+
+.sliderValue{
+  position: relative;
+  width: 20vw;
+}
+
+.sliderValue span{
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  transform: translateX(-70%) scale(0);
+  font-weight: 500;
+  top: -40px;
+  line-height: 55px;
+  z-index: 2;
+  color: white;
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  padding-right: 5%;
+}
+
+.sliderValue span.show{
+  transform: translateX(-70%) scale(1);
+}
+
+.sliderValue span:after{
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: #5f367e;
+  border: 2px solid white;
+  z-index: -1;
+  left: 30%;
+  transform: translateX(-50%) rotate(45deg);
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  padding-right: 5%;
+}
+
+.field{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.field{
+  color: white;
+}
+ 
+.field .value_left{
+  margin: 0 2%;
+  color: white;
+  white-space: nowrap;
+}
+
+.field .value_right{
+  margin: 0 2%;
+  color: white;
+  white-space: nowrap;
+}
+
+.range input{
+  -webkit-appearance: none;
+  width: 22vw;
+  height: 15%;
+  background: linear-gradient(to right, white 60%, white 40%);
+  border-radius: 5px;
+
+}
+
+.range input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #5f367e;
+  border: 1px solid #5f367e;
+  cursor: pointer;
+}
+
+.range input::-moz-range-progress{
+  background: #5f367e; 
+  /* this progress background is only shown on Firefox */
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 1258px) {
+
+  .range input {
+    width: 60vw;
+}
+
+.field .value{
+  color: white;
+}
+
+.sliderValue{
+  position: relative;
+  width: 54vw;
+}
+
+.sliderValue span{
+  padding-right:  8%;
+}
+
+}

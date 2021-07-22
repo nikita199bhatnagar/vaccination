@@ -1,0 +1,76 @@
+{
+    "schema": {
+        "fields": [
+            {
+                "name": "index",
+                "type": "integer"
+            },
+            {
+                "name": "Pincode",
+                "type": "integer"
+            },
+            {
+                "name": "Latitude",
+                "type": "number"
+            },
+            {
+                "name": "Longitude",
+                "type": "string"
+            }
+        ],
+        "primaryKey": [
+            "index"
+        ],
+        "pandas_version": "0.20.0"
+    },
+    "data": [
+        {
+            "index": 2962,
+            "Pincode": 263623,
+            "Latitude": 29.5617,
+            "Longitude": 79.8521
+        },
+        {
+            "index": 1885,
+            "Pincode": 212106,
+            "Latitude": 25.1055,
+            "Longitude": 81.8224
+        },
+        {
+            "index": 7717,
+            "Pincode": 486331,
+            "Latitude": 24.7332,
+            "Longitude": 81.9098
+        },
+        {
+            "index": 3170,
+            "Pincode": 273402,
+            "Latitude": 26.2992,
+            "Longitude": 83.571
+        },
+        {
+            "index": 17962,
+            "Pincode": 822114,
+            "Latitude": 24.1839,
+            "Longitude": 83.7836
+        },
+        {
+            "index": 7945,
+            "Pincode": 495445,
+            "Latitude": 22.5886,
+            "Longitude": 82.5186
+        },
+        {
+            "index": 9979,
+            "Pincode": 560107,
+            "Latitude": 13.0897,
+            "Longitude": 77.4862
+        },
+        {
+            "index": 9964,
+            "Pincode": 560090,
+            "Latitude": 13.0796,
+            "Longitude": 77.497
+        }
+    ]
+}

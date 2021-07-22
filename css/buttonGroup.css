@@ -1,0 +1,84 @@
+.all_buttons{
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    justify-content: center;
+    display: grid;
+    font-weight: 500;
+    border-radius:20px;
+    background-color:#4da8da; 
+    margin:0 25% 1% 25%; 
+}
+
+.dd{
+    padding: 2%;
+    margin: 0 1% 1% 1%;
+    border-radius: 2rem;
+    font-weight: 500;
+    color: white;    
+    background-color:#4da8da; 
+    border-color: #4da8da;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    outline: 0;
+}
+  
+.dd:hover {
+    background-color: #007cc7;
+    color: white;
+}
+
+.dd::after:hover{
+    background-color: #007cc7;
+    color: white;
+}
+
+.btn_parent{
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.btn-group{
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-group button{
+    padding: 1% 4%;
+    margin: 0 1% 1% 1%;
+
+    font-weight: 500;
+    color: white;
+    background-color:#4da8da; 
+    border-color: #4da8da;
+    outline: 0;
+
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.btn-group button:hover {
+    transition-duration: 0.4s;
+    background-color: #007cc7; 
+    color: white;
+}
+
+
+@media only screen and (max-width: 1258px) {
+
+    .btn-group button{
+        padding: 1% 2.339%;
+    }
+
+    .all_buttons{
+        background-color:#4da8da; 
+        margin: 5% 1% 8% 1%;
+        border-radius:20px;
+    }
+}
